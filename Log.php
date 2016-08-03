@@ -10,9 +10,11 @@ namespace sergeymakinen\facades;
  * @method static integer getFlushInterval() This method returns the value of [[Logger::flushInterval]].
  * @method static \yii\log\Logger getLogger() Gets the connected logger.
  * @method static integer getTraceLevel() This method returns the value of [[Logger::traceLevel]]. Defaults to 0.
+ * @method static array|\yii\log\Target getTargets() Returns $targets. or the configuration for creating the log target instance.
  * @method static setFlushInterval(integer $value) This method will set the value of [[Logger::flushInterval]].
  * @method static setLogger(\yii\log\Logger|string|array $value) Sets the connected logger.
- * @method static setTraceLevel(integer $value) This method will set the value of [[Logger::traceLevel]]. If the value is greater than 0,
+ * @method static setTraceLevel(integer $value) This method will set the value of [[Logger::traceLevel]]. If the value is greater than 0,.
+ * @method static setTargets(array|\yii\log\Target $value) Sets $targets. or the configuration for creating the log target instance.
  */
 class Log extends Facade
 {

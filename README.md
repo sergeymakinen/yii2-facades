@@ -68,19 +68,32 @@ After:
 $price = Formatter::asCurrency(123456.78, 'USD');
 ```
 
-## Extending
+## Accessing properties
 
-If you want a new facade, it's fast and easy, imagine you want to bring a facade for your ```SampleComponent```:
+Any class public property ```$foo``` can be got via an accessor:
 
 ```php
-class SampleComponent extends Facade
+$value = YourFacadeName::getFoo()
+```
+And set:
+
+```php
+YourFacadeName::setFoo($value)
+```
+
+## Extending
+
+If you want a new facade, it's fast and easy, imagine you want to bring a facade for your ```YourFacadeName```:
+
+```php
+class YourFacadeName extends Facade
 {
     /**
      * @inheritdoc
      */
     public static function getFacadeComponentId()
     {
-        return 'sampleComponent';
+        return 'yourFacadeComponentName'; // Yii::$app->yourFacadeComponentName
     }
 }
 ```
@@ -88,11 +101,11 @@ class SampleComponent extends Facade
 Then whenever you call
 
 ```php
-SampleComponent::hello('world');
+YourFacadeName::hello('world');
 ```
 
 it will be executed as
 
 ```php
-Yii::$app->get('sampleComponent')->hello('world');
+Yii::$app->get('yourFacadeComponentName')->hello('world');
 ```

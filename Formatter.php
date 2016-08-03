@@ -31,6 +31,38 @@ namespace sergeymakinen\facades;
  * @method static string asTimestamp(integer|string|\DateTime $value) Formats a date, time or datetime in a float number as UNIX timestamp (seconds since 01-01-1970).
  * @method static string asUrl(mixed $value, array $options = []) Formats the value as a hyperlink.
  * @method static string format(mixed $value, string|array $format) Formats the value based on the given format type.
+ * @method static array getBooleanFormat() Returns $booleanFormat - the text to be displayed when formatting a boolean value.
+ * @method static \IntlCalendar|int|null getCalendar() Returns $calendar - the calendar to be used for date formatting.
+ * @method static string getCurrencyCode() Returns $currencyCode - the 3-letter ISO 4217 currency code indicating the default currency to use for [[asCurrency]].
+ * @method static string getDateFormat() Returns $dateFormat - the default format string to be used to format a [[asDate()|date]].
+ * @method static string getDatetimeFormat() Returns $datetimeFormat - the default format string to be used to format a [[asDatetime()|date and time]].
+ * @method static string getDecimalSeparator() Returns $decimalSeparator - the character displayed as the decimal point when formatting a number.
+ * @method static string getDefaultTimeZone() Returns $defaultTimeZone - the time zone that is assumed for input values if they do not include a time zone explicitly.
+ * @method static string getLocale() Returns $locale - the locale ID that is used to localize the date and number formatting.
+ * @method static string getNullDisplay() Returns $nullDisplay - the text to be displayed when formatting a `null` value.
+ * @method static array getNumberFormatterOptions() Returns $numberFormatterOptions - a list of name value pairs that are passed to the intl [Numberformatter::setAttribute()](http://php.net/manual/en/numberformatter.setattribute.php) method of all the number formatter objects created by [[createNumberFormatter()]].
+ * @method static array getNumberFormatterSymbols() Returns $numberFormatterSymbols - a list of name value pairs that are passed to the intl [Numberformatter::setSymbol()](http://php.net/manual/en/numberformatter.setsymbol.php) method of all the number formatter objects created by [[createNumberFormatter()]].
+ * @method static array getNumberFormatterTextOptions() Returns $numberFormatterTextOptions - a list of name value pairs that are passed to the intl [Numberformatter::setTextAttribute()](http://php.net/manual/en/numberformatter.settextattribute.php) method of all the number formatter objects created by [[createNumberFormatter()]].
+ * @method static integer getSizeFormatBase() Returns $sizeFormatBase - the base at which a kilobyte is calculated (1000 or 1024 bytes per kilobyte), used by [[asSize]] and [[asShortSize]].
+ * @method static string getThousandSeparator() Returns $thousandSeparator - the character displayed as the thousands separator (also called grouping separator) character when formatting a number.
+ * @method static string getTimeFormat() Returns $timeFormat - the default format string to be used to format a [[asTime()|time]].
+ * @method static string getTimeZone() Returns $timeZone - the time zone to use for formatting time and date values.
+ * @method static setBooleanFormat(array $value) Sets $booleanFormat - the text to be displayed when formatting a boolean value.
+ * @method static setCalendar(\IntlCalendar|int|null $value) Sets $calendar - the calendar to be used for date formatting.
+ * @method static setCurrencyCode(string $value) Sets $currencyCode - the 3-letter ISO 4217 currency code indicating the default currency to use for [[asCurrency]].
+ * @method static setDateFormat(string $value) Sets $dateFormat - the default format string to be used to format a [[asDate()|date]].
+ * @method static setDatetimeFormat(string $value) Sets $datetimeFormat - the default format string to be used to format a [[asDatetime()|date and time]].
+ * @method static setDecimalSeparator(string $value) Sets $decimalSeparator - the character displayed as the decimal point when formatting a number.
+ * @method static setDefaultTimeZone(string $value) Sets $defaultTimeZone - the time zone that is assumed for input values if they do not include a time zone explicitly.
+ * @method static setLocale(string $value) Sets $locale - the locale ID that is used to localize the date and number formatting.
+ * @method static setNullDisplay(string $value) Sets $nullDisplay - the text to be displayed when formatting a `null` value.
+ * @method static setNumberFormatterOptions(array $value) Sets $numberFormatterOptions - a list of name value pairs that are passed to the intl [Numberformatter::setAttribute()](http://php.net/manual/en/numberformatter.setattribute.php) method of all the number formatter objects created by [[createNumberFormatter()]].
+ * @method static setNumberFormatterSymbols(array $value) Sets $numberFormatterSymbols - a list of name value pairs that are passed to the intl [Numberformatter::setSymbol()](http://php.net/manual/en/numberformatter.setsymbol.php) method of all the number formatter objects created by [[createNumberFormatter()]].
+ * @method static setNumberFormatterTextOptions(array $value) Sets $numberFormatterTextOptions - a list of name value pairs that are passed to the intl [Numberformatter::setTextAttribute()](http://php.net/manual/en/numberformatter.settextattribute.php) method of all the number formatter objects created by [[createNumberFormatter()]].
+ * @method static setSizeFormatBase(integer $value) Sets $sizeFormatBase - the base at which a kilobyte is calculated (1000 or 1024 bytes per kilobyte), used by [[asSize]] and [[asShortSize]].
+ * @method static setThousandSeparator(string $value) Sets $thousandSeparator - the character displayed as the thousands separator (also called grouping separator) character when formatting a number.
+ * @method static setTimeFormat(string $value) Sets $timeFormat - the default format string to be used to format a [[asTime()|time]].
+ * @method static setTimeZone(string $value) Sets $timeZone - the time zone to use for formatting time and date values.
  */
 class Formatter extends Facade
 {

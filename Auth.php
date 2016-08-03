@@ -9,7 +9,7 @@ namespace sergeymakinen\facades;
  * @method static boolean add($object) Adds a role, permission or rule to the RBAC system.
  * @method static boolean addChild($parent, $child) Adds an item as a child of another item.
  * @method static \yii\rbac\Assignment assign($role, string|integer $userId) Assigns a role to a user.
- * @method static boolean canAddChild(\yii\rbac\Item $parent, \yii\rbac\Item $child) Checks the possibility of adding a child to parent
+ * @method static boolean canAddChild(\yii\rbac\Item $parent, \yii\rbac\Item $child) Checks the possibility of adding a child to parent.
  * @method static boolean checkAccess(string|integer $userId, string $permissionName, array $params = []) Checks if the user has the specified permission.
  * @method static \yii\rbac\Permission createPermission(string $name) Creates a new Permission object.
  * @method static \yii\rbac\Role createRole(string $name) Creates a new Role object.

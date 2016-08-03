@@ -29,18 +29,16 @@ namespace sergeymakinen\facades;
  * @method static boolean|null getUseCookies() Returns the value indicating whether cookies should be used to store session IDs.
  * @method static boolean getUseCustomStorage() Returns a value indicating whether to use custom session storage.
  * @method static boolean getUseTransparentSessionID()
+ * @method static string getFlashParam() Returns $flashParam - the name of the session variable that stores the flash message data.
+ * @method static \SessionHandlerInterface|array getHandler() Returns $handler - an object implementing the SessionHandlerInterface or a configuration array.
  * @method static boolean has(mixed $key)
  * @method static boolean hasFlash(string $key) Returns a value indicating whether there are flash messages associated with the specified key.
- * @method static boolean offsetExists(mixed $offset) This method is required by the interface [[\ArrayAccess]].
- * @method static mixed offsetGet(integer $offset) This method is required by the interface [[\ArrayAccess]].
- * @method static offsetSet(integer $offset, mixed $item) This method is required by the interface [[\ArrayAccess]].
- * @method static offsetUnset(mixed $offset) This method is required by the interface [[\ArrayAccess]].
  * @method static open() Starts the session.
  * @method static boolean openSession(string $savePath, string $sessionName) Session open handler.
  * @method static string readSession(string $id) Session read handler.
  * @method static regenerateID(boolean $deleteOldSession = false) Updates the current session ID with a newly generated one .
  * @method static mixed remove(string $key) Removes a session variable.
- * @method static removeAll() Removes all session variables
+ * @method static removeAll() Removes all session variables.
  * @method static removeAllFlashes() Removes all flash messages.
  * @method static mixed removeFlash(string $key) Removes a flash message.
  * @method static set(string $key, mixed $value) Adds a session variable.
@@ -54,6 +52,8 @@ namespace sergeymakinen\facades;
  * @method static setTimeout(integer $value)
  * @method static setUseCookies(boolean|null $value) Sets the value indicating whether cookies should be used to store session IDs.
  * @method static setUseTransparentSessionID(boolean $value)
+ * @method static setFlashParam(string $value) Sets $flashParam - the name of the session variable that stores the flash message data.
+ * @method static setHandler(\SessionHandlerInterface|array $value) Sets $handler - an object implementing the SessionHandlerInterface or a configuration array.
  * @method static boolean writeSession(string $id, string $data) Session write handler.
  */
 class Session extends Facade

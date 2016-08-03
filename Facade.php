@@ -11,6 +11,13 @@ use yii\base\InvalidConfigException;
 abstract class Facade
 {
     /**
+     * Facaded component property accessors.
+     *
+     * @var array
+     */
+    private static $_accessors = [];
+
+    /**
      * The facaded application.
      *
      * @var Application
@@ -44,6 +51,14 @@ abstract class Facade
         $id = static::getFacadeComponentId();
         if (!isset(self::$_components[$id])) {
             self::$_components[$id] = static::getFacadeApplication()->get($id);
+            self::$_accessors[$id] = [];
+            foreach ((new \ReflectionClass(self::$_components[$id]))->getProperties(
+                \ReflectionProperty::IS_PUBLIC & ~\ReflectionProperty::IS_STATIC
+            ) as $property) {
+                $accessor = ucfirst($property->getName());
+                self::$_accessors[$id]['get' . $accessor] = $property->getName();
+                self::$_accessors[$id]['set' . $accessor] = $property->getName();
+            }
         }
         return self::$_components[$id];
     }
@@ -80,10 +95,20 @@ abstract class Facade
      */
     public static function __callStatic($name, $arguments)
     {
-        return call_user_func_array([
-            static::getFacadeComponent(),
-            $name
-        ], $arguments);
+        $id = static::getFacadeComponentId();
+        if (isset(self::$_accessors[$id][$name])) {
+            if ($name[0] === 'g') {
+                return static::getFacadeComponent()->{self::$_accessors[$id][$name]};
+            } else {
+                static::getFacadeComponent()->{self::$_accessors[$id][$name]} = reset($arguments);
+                return null;
+            }
+        } else {
+            return call_user_func_array([
+                static::getFacadeComponent(),
+                $name
+            ], $arguments);
+        }
     }
 
     /**

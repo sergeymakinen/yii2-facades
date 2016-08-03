@@ -23,6 +23,22 @@ namespace sergeymakinen\facades;
  * @method static mixed evaluateDynamicContent(string $statements) Evaluates the given PHP statements.
  * @method static \yii\web\AssetManager getAssetManager() Registers the asset manager being used by this view object.
  * @method static string|boolean getViewFile()
+ * @method static \yii\web\AssetBundle getAssetBundles() Returns $assetBundles. are the registered [[AssetBundle]] objects.
+ * @method static array getBlocks() Returns $blocks - a list of named output blocks.
+ * @method static array getCacheStack() Returns $cacheStack - a list of currently active fragment cache widgets.
+ * @method static \yii\base\ViewContextInterface getContext() Returns $context - the context under which the [[renderFile()]] method is being invoked.
+ * @method static array getCss() Returns $css - the registered CSS code blocks.
+ * @method static array getCssFiles() Returns $cssFiles - the registered CSS files.
+ * @method static string getDefaultExtension() Returns $defaultExtension - the default view file extension.
+ * @method static array getDynamicPlaceholders() Returns $dynamicPlaceholders - a list of placeholders for embedding dynamic contents.
+ * @method static array getJs() Returns $js.
+ * @method static array getJsFiles() Returns $jsFiles - the registered JS files.
+ * @method static array getLinkTags() Returns $linkTags - the registered link tags.
+ * @method static array getMetaTags() Returns $metaTags - the registered meta tags.
+ * @method static mixed getParams() Returns $params - custom parameters that are shared among view templates.
+ * @method static array getRenderers() Returns $renderers - a list of available renderers indexed by their corresponding supported file extensions.
+ * @method static \yii\base\Theme|array|string getTheme() Returns $theme - the theme object or the configuration for creating the theme object.
+ * @method static string getTitle() Returns $title.
  * @method static head() Marks the position of an HTML head section.
  * @method static \yii\web\AssetBundle registerAssetBundle(string $name, integer|null $position = null) Registers the named asset bundle.
  * @method static registerCss(string $css, array $options = [], string $key = null) Registers a CSS code block.
@@ -37,6 +53,22 @@ namespace sergeymakinen\facades;
  * @method static string renderFile(string $viewFile, array $params = [], object $context = null) Renders a view file.
  * @method static string renderPhpFile(string $_file_, array $_params_ = []) Renders a view file as a PHP script.
  * @method static setAssetManager(\yii\web\AssetManager $value) Sets the asset manager.
+ * @method static setAssetBundles(\yii\web\AssetBundle $value) Sets $assetBundles. are the registered [[AssetBundle]] objects.
+ * @method static setBlocks(array $value) Sets $blocks - a list of named output blocks.
+ * @method static setCacheStack(array $value) Sets $cacheStack - a list of currently active fragment cache widgets.
+ * @method static setContext(\yii\base\ViewContextInterface $value) Sets $context - the context under which the [[renderFile()]] method is being invoked.
+ * @method static setCss(array $value) Sets $css - the registered CSS code blocks.
+ * @method static setCssFiles(array $value) Sets $cssFiles - the registered CSS files.
+ * @method static setDefaultExtension(string $value) Sets $defaultExtension - the default view file extension.
+ * @method static setDynamicPlaceholders(array $value) Sets $dynamicPlaceholders - a list of placeholders for embedding dynamic contents.
+ * @method static setJs(array $value) Sets $js.
+ * @method static setJsFiles(array $value) Sets $jsFiles - the registered JS files.
+ * @method static setLinkTags(array $value) Sets $linkTags - the registered link tags.
+ * @method static setMetaTags(array $value) Sets $metaTags - the registered meta tags.
+ * @method static setParams(mixed $value) Sets $params - custom parameters that are shared among view templates.
+ * @method static setRenderers(array $value) Sets $renderers - a list of available renderers indexed by their corresponding supported file extensions.
+ * @method static setTheme(\yii\base\Theme|array|string $value) Sets $theme - the theme object or the configuration for creating the theme object.
+ * @method static setTitle(string $value) Sets $title.
  */
 class View extends Facade
 {
