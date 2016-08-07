@@ -2,7 +2,7 @@
 
 Laravel like facades support for Yii 2 application components. Just what you want: simple, extensive and with an IDE auto completion support via [PHPDoc](https://www.phpdoc.org) so you won't be disappointed.
 
-[![Code Quality](https://img.shields.io/scrutinizer/g/sergeymakinen/yii2-facades.svg?style=flat-square)](https://scrutinizer-ci.com/g/sergeymakinen/yii2-facades/) [![Packagist Version](https://img.shields.io/packagist/v/sergeymakinen/yii2-facades.svg?style=flat-square)](https://packagist.org/packages/sergeymakinen/yii2-facades) [![Total Downloads](https://img.shields.io/packagist/dt/sergeymakinen/yii2-facades.svg?style=flat-square)](https://packagist.org/packages/sergeymakinen/yii2-facades) [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Code Quality](https://img.shields.io/scrutinizer/g/sergeymakinen/yii2-facades.svg?style=flat-square)](https://scrutinizer-ci.com/g/sergeymakinen/yii2-facades) [![Packagist Version](https://img.shields.io/packagist/v/sergeymakinen/yii2-facades.svg?style=flat-square)](https://packagist.org/packages/sergeymakinen/yii2-facades) [![Total Downloads](https://img.shields.io/packagist/dt/sergeymakinen/yii2-facades.svg?style=flat-square)](https://packagist.org/packages/sergeymakinen/yii2-facades) [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 ## Installation
 
@@ -11,20 +11,20 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require sergeymakinen/yii2-facades "~1.0"
+php composer.phar require sergeymakinen/yii2-facades "^1.1.1"
 ```
 
 or add
 
 ```
-"sergeymakinen/yii2-facades": "~1.0"
+"sergeymakinen/yii2-facades": "^1.1.1"
 ```
 
 to the require section of your `composer.json` file.
 
 ## Usage
 
-Basically you install the extension and start using it like you do with all normal Yii 2 application components but with a shorter simpler syntax, let's take a look (in case you wonder, all default facades, including an abstract base ```Facade``` reside under a ```sergeymakinen\facades``` namespace):
+Basically you install the extension and start using it like you do with all normal Yii 2 application components but with a shorter simpler syntax, let's take a look (in case you wonder, all default facades, including an abstract base `Facade` reside under a `sergeymakinen\facades` namespace):
 
 ### Generate random string
 
@@ -70,7 +70,7 @@ $price = Formatter::asCurrency(123456.78, 'USD');
 
 ## Accessing properties
 
-Any class public property ```$foo``` can be got via an accessor:
+Any class public property `$foo` can be got via an accessor:
 
 ```php
 $value = YourFacadeName::getFoo()
@@ -83,7 +83,7 @@ YourFacadeName::setFoo($value)
 
 ## Extending
 
-If you want a new facade, it's fast and easy, imagine you want to bring a facade for your ```YourFacadeName```:
+If you want a new facade, it's fast and easy, imagine you want to bring a `YourFacadeName` facade:
 
 ```php
 class YourFacadeName extends Facade

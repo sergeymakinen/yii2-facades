@@ -1,12 +1,12 @@
 {
     "name": "sergeymakinen/yii2-facades",
+    "homepage": "https://github.com/sergeymakinen/yii2-facades",
     "description": "Laravel like facades support for Yii 2 application components",
     "keywords": ["yii2-facades", "yii2", "yii", "facades", "facade", "laravel"],
     "type": "yii2-extension",
     "license": "MIT",
     "support": {
         "issues": "https://github.com/sergeymakinen/yii2-facades/issues?state=open",
-        "forum": "https://gitter.im/sergeymakinen/yii2-facades",
         "source": "https://github.com/sergeymakinen/yii2-facades"
     },
     "authors": [
@@ -18,7 +18,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "yiisoft/yii2": "~2.0"
+        "yiisoft/yii2": "2.0.*"
     },
     "autoload": {
         "psr-4": {
