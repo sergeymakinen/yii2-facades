@@ -11,13 +11,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require sergeymakinen/yii2-facades "^1.1.1"
+php composer.phar require sergeymakinen/yii2-facades "^1.0"
 ```
 
 or add
 
 ```
-"sergeymakinen/yii2-facades": "^1.1.1"
+"sergeymakinen/yii2-facades": "^1.0"
 ```
 
 to the require section of your `composer.json` file.
