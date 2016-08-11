@@ -15,7 +15,7 @@ abstract class Facade
      *
      * @var array
      */
-    private static $_accessors = [];
+    private static $_accessors;
 
     /**
      * The facaded application.
@@ -29,7 +29,7 @@ abstract class Facade
      *
      * @var object[]
      */
-    private static $_components = [];
+    private static $_components;
 
     /**
      * Returns a component ID being facaded.
@@ -51,14 +51,6 @@ abstract class Facade
         $id = static::getFacadeComponentId();
         if (!isset(self::$_components[$id])) {
             self::$_components[$id] = static::getFacadeApplication()->get($id);
-            self::$_accessors[$id] = [];
-            foreach ((new \ReflectionClass(self::$_components[$id]))->getProperties(
-                \ReflectionProperty::IS_PUBLIC & ~\ReflectionProperty::IS_STATIC
-            ) as $property) {
-                $accessor = ucfirst($property->getName());
-                self::$_accessors[$id]['get' . $accessor] = $property->getName();
-                self::$_accessors[$id]['set' . $accessor] = $property->getName();
-            }
         }
         return self::$_components[$id];
     }
@@ -96,6 +88,16 @@ abstract class Facade
     public static function __callStatic($name, $arguments)
     {
         $id = static::getFacadeComponentId();
+        if (!isset(self::$_accessors[$id])) {
+            self::$_accessors[$id] = [];
+            foreach ((new \ReflectionClass(static::getFacadeComponent()))->getProperties(
+                \ReflectionProperty::IS_PUBLIC & ~\ReflectionProperty::IS_STATIC
+            ) as $property) {
+                $accessor = ucfirst($property->getName());
+                self::$_accessors[$id]['get' . $accessor] = $property->getName();
+                self::$_accessors[$id]['set' . $accessor] = $property->getName();
+            }
+        }
         if (isset(self::$_accessors[$id][$name])) {
             if ($name[0] === 'g') {
                 return static::getFacadeComponent()->{self::$_accessors[$id][$name]};
