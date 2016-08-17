@@ -6,15 +6,29 @@ namespace sergeymakinen\facades;
 /**
  * Log facade.
  *
- * @method static dispatch(array $messages, boolean $final) Dispatches the logged messages to [[targets]].
- * @method static integer getFlushInterval() This method returns the value of [[Logger::flushInterval]].
+ * Facades Yii::$app->get('log') component.
+ *
+ * @method static \yii\base\Behavior attachBehavior(string $name, string|array|\yii\base\Behavior $behavior) Attaches a behavior to this component.
+ * @method static attachBehaviors(array $behaviors) Attaches a list of behaviors to the component.
+ * @method static array behaviors() Returns a list of behaviors that this component should behave as.
+ * @method static null|\yii\base\Behavior detachBehavior(string $name) Detaches a behavior from the component.
+ * @method static detachBehaviors() Detaches all behaviors from the component.
+ * @method static dispatch(array $messages, bool $final) Dispatches the logged messages to [[targets]].
+ * @method static ensureBehaviors() Makes sure that the behaviors declared in [[behaviors()]] are attached to this component.
+ * @method static null|\yii\base\Behavior getBehavior(string $name) Returns the named behavior object.
+ * @method static \yii\base\Behavior[] getBehaviors() Returns all behaviors attached to this component.
+ * @method static int getFlushInterval()
  * @method static \yii\log\Logger getLogger() Gets the connected logger.
- * @method static integer getTraceLevel() This method returns the value of [[Logger::traceLevel]]. Defaults to 0.
- * @method static array|\yii\log\Target getTargets() Returns $targets. or the configuration for creating the log target instance.
- * @method static setFlushInterval(integer $value) This method will set the value of [[Logger::flushInterval]].
+ * @method static int getTraceLevel()
+ * @method static array|\yii\log\Target[] getTargets() Returns $targets - the log targets.
+ * @method static bool hasEventHandlers(string $name) Returns a value indicating whether there is any handler attached to the named event.
+ * @method static bool off(string $name, callable $handler = null) Detaches an existing event handler from this component.
+ * @method static on(string $name, callable $handler, mixed $data = null, bool $append = true) Attaches an event handler to an event.
+ * @method static setFlushInterval(int $value)
  * @method static setLogger(\yii\log\Logger|string|array $value) Sets the connected logger.
- * @method static setTraceLevel(integer $value) This method will set the value of [[Logger::traceLevel]]. If the value is greater than 0,.
- * @method static setTargets(array|\yii\log\Target $value) Sets $targets. or the configuration for creating the log target instance.
+ * @method static setTraceLevel(int $value)
+ * @method static setTargets(array|\yii\log\Target[] $value) Sets $targets - the log targets.
+ * @method static trigger(string $name, \yii\base\Event $event = null) Triggers an event.
  */
 class Log extends Facade
 {

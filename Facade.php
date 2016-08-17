@@ -72,8 +72,6 @@ abstract class Facade
      * Sets the facaded application.
      *
      * @param Application $value
-     *
-     * @return void
      */
     public static function setFacadeApplication(Application $value)
     {
