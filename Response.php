@@ -98,7 +98,7 @@ class Response extends Facade
      *
      * @return \yii\web\Response the response object itself.
      */
-    public static function emptyResponse($statusCode = 204, array $headers = [])
+    public static function bare($statusCode = 204, array $headers = [])
     {
         $response = static::sendFormat(\yii\web\Response::FORMAT_RAW, null, $headers);
         $response->setStatusCode($statusCode);
