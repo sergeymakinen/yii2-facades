@@ -6,7 +6,7 @@ Laravel like facades support for Yii 2 application components. Just what you wan
 
 ## Installation
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+The preferred way to install this extension is through [composer](https://getcomposer.org/download/).
 
 Either run
 
@@ -45,13 +45,13 @@ $random = Security::generateRandomString(128);
 Before:
 
 ```php
-$users = Yii::$app->db->createCommand('select * from users;')->queryAll();
+$users = Yii::$app->db->createCommand('SELECT * FROM users;')->queryAll();
 ```
 
 After:
 
 ```php
-$users = Db::createCommand('select * from users;')->queryAll();
+$users = Db::createCommand('SELECT * FROM users;')->queryAll();
 ```
 
 ### Format currency
@@ -79,6 +79,151 @@ And set:
 
 ```php
 YourFacadeName::setFoo($value)
+```
+
+## Helpers
+
+Some facades also contain useful helpers to make a development more quick and elegant.
+
+### Cache
+
+#### get
+
+```php
+public static function get($key, $default = false)
+```
+
+Retrieves a value using the provided key and returns it or the specified default value which can also be a closure:
+
+```php
+$options = Cache::get('options', function () {
+    return [
+        'option1' => false,
+        'option2' => true
+    ];
+});
+```
+
+#### getOrSet
+
+```php
+public static function getOrSet($key, $default, $duration = 0, $dependency = null)
+```
+
+Retrieves a value using the provided key or the specified default value if the value is not cached. If the value is not in the cache, it will be cached. The default value can also be a closure:
+
+```php
+$users = Cache::getOrSet('users', function () {
+    return app\models\Users::findAll();
+}, 3600);
+```
+
+### Response
+
+#### bare
+
+```php
+public static function bare($statusCode = 204, array $headers = [])
+```
+
+Returns an empty response with optional headers:
+
+```php
+public function actionCreate()
+{
+    // ...
+    return Response::bare(201);
+}
+```
+
+#### html
+
+```php
+public static function html($data, array $headers = [])
+```
+
+Returns a HTML response with optional headers:
+
+```php
+public function actionIndex()
+{
+    // ...
+    return Response::html($this->render('index'), [
+        'Cache-Control' => 'no-cache'
+    ]);
+}
+```
+
+#### json
+
+```php
+public static function json($data, array $headers = [])
+```
+
+Returns a JSON response with optional headers:
+
+```php
+public function actionList()
+{
+    // ...
+    return Response::json(Db::createCommand('SELECT * FROM users')->all());
+}
+```
+
+#### jsonp
+
+```php
+public static function jsonp($data, $callback = 'callback', array $headers = [])
+```
+
+Returns a JSONP response with optional headers:
+
+```php
+public function actionApi($callback)
+{
+    // ...
+    return Response::jsonp([
+        'success' => true,
+        'response' => $data
+    ], $callback);
+}
+```
+
+#### raw
+
+```php
+public static function raw($data, array $headers = [])
+```
+
+Returns a response with data "as is" with optional headers:
+
+```php
+public function actionCreate()
+{
+    // ...
+    return Response::raw($binary, [
+        'Content-Type' => 'application/octet-stream'
+    ]);
+}
+```
+
+#### xml
+
+```php
+public static function xml($data, array $headers = [])
+```
+
+Returns a XML response with optional headers:
+
+```php
+public function actionCreate()
+{
+    // ...
+    return Response::xml([
+        'success' => true,
+        'response' => $data
+    ]);
+}
 ```
 
 ## Extending

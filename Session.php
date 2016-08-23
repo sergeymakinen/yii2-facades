@@ -1,4 +1,11 @@
 <?php
+/**
+ * Facades for Yii 2
+ *
+ * @see       https://github.com/sergeymakinen/yii2-facades
+ * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
+ */
 
 namespace sergeymakinen\facades;
 
@@ -8,6 +15,7 @@ namespace sergeymakinen\facades;
  *
  * Facades Yii::$app->get('session') component.
  *
+ * @see \yii\web\Session
  * @method static addFlash(string $key, mixed $value = true, bool $removeAfterAccess = true) Adds a flash message.
  * @method static \yii\base\Behavior attachBehavior(string $name, string|array|\yii\base\Behavior $behavior) Attaches a behavior to this component.
  * @method static attachBehaviors(array $behaviors) Attaches a list of behaviors to the component.
@@ -28,7 +36,9 @@ namespace sergeymakinen\facades;
  * @method static array getCookieParams()
  * @method static int getCount() Returns the number of items in the session.
  * @method static mixed getFlash(string $key, mixed $defaultValue = null, bool $delete = false) Returns a flash message.
+ * @method static string getFlashParam() Returns the name of the session variable that stores the flash message data.
  * @method static float getGCProbability()
+ * @method static \SessionHandlerInterface|array getHandler() Returns an object implementing the SessionHandlerInterface or a configuration array.
  * @method static bool getHasSessionId() Returns a value indicating whether the current request has sent the session ID.
  * @method static string getId() Gets the session ID.
  * @method static bool getIsActive()
@@ -38,8 +48,6 @@ namespace sergeymakinen\facades;
  * @method static bool|null getUseCookies() Returns the value indicating whether cookies should be used to store session IDs.
  * @method static bool getUseCustomStorage() Returns a value indicating whether to use custom session storage.
  * @method static bool getUseTransparentSessionID()
- * @method static string getFlashParam() Returns $flashParam - the name of the session variable that stores the flash message data.
- * @method static \SessionHandlerInterface|array getHandler() Returns $handler - an object implementing the SessionHandlerInterface or a configuration array.
  * @method static bool has(mixed $key)
  * @method static bool hasEventHandlers(string $name) Returns a value indicating whether there is any handler attached to the named event.
  * @method static bool hasFlash(string $key) Returns a value indicating whether there are flash messages associated with the specified key.
@@ -56,7 +64,9 @@ namespace sergeymakinen\facades;
  * @method static set(string $key, mixed $value) Adds a session variable.
  * @method static setCookieParams(array $value) Sets the session cookie parameters.
  * @method static setFlash(string $key, mixed $value = true, bool $removeAfterAccess = true) Sets a flash message.
+ * @method static setFlashParam(string $value) Sets the name of the session variable that stores the flash message data.
  * @method static setGCProbability(float $value)
+ * @method static setHandler(\SessionHandlerInterface|array $value) Sets an object implementing the SessionHandlerInterface or a configuration array.
  * @method static setHasSessionId(bool $value) Sets the value indicating whether the current request has sent the session ID.
  * @method static setId(string $value) Sets the session ID.
  * @method static setName(string $value) Sets the name for the current session.
@@ -64,8 +74,6 @@ namespace sergeymakinen\facades;
  * @method static setTimeout(int $value)
  * @method static setUseCookies(bool|null $value) Sets the value indicating whether cookies should be used to store session IDs.
  * @method static setUseTransparentSessionID(bool $value)
- * @method static setFlashParam(string $value) Sets $flashParam - the name of the session variable that stores the flash message data.
- * @method static setHandler(\SessionHandlerInterface|array $value) Sets $handler - an object implementing the SessionHandlerInterface or a configuration array.
  * @method static trigger(string $name, \yii\base\Event $event = null) Triggers an event.
  * @method static bool writeSession(string $id, string $data) Session write handler.
  */

@@ -1,4 +1,11 @@
 <?php
+/**
+ * Facades for Yii 2
+ *
+ * @see       https://github.com/sergeymakinen/yii2-facades
+ * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
+ */
 
 namespace sergeymakinen\facades;
 
@@ -8,6 +15,7 @@ namespace sergeymakinen\facades;
  *
  * Facades Yii::$app->get('auth') component.
  *
+ * @see \yii\rbac\ManagerInterface
  * @method static bool add(\yii\rbac\Role|\yii\rbac\Permission|\yii\rbac\Rule $object) Adds a role, permission or rule to the RBAC system.
  * @method static bool addChild(\yii\rbac\Item $parent, \yii\rbac\Item $child) Adds an item as a child of another item.
  * @method static \yii\rbac\Assignment assign(\yii\rbac\Role $role, string|int $userId) Assigns a role to a user.

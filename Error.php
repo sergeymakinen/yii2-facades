@@ -1,4 +1,11 @@
 <?php
+/**
+ * Facades for Yii 2
+ *
+ * @see       https://github.com/sergeymakinen/yii2-facades
+ * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
+ */
 
 namespace sergeymakinen\facades;
 
@@ -8,6 +15,8 @@ namespace sergeymakinen\facades;
  *
  * Facades Yii::$app->get('errorHandler') component.
  *
+ * @see \yii\console\ErrorHandler
+ * @see \yii\web\ErrorHandler
  * @method static string addTypeLinks(string $code) Adds informational links to the given PHP type/class.
  * @method static string argumentsToString(array $args) Converts arguments array to its string representation.
  * @method static \yii\base\Behavior attachBehavior(string $name, string|array|\yii\base\Behavior $behavior) Attaches a behavior to this component.
@@ -24,18 +33,18 @@ namespace sergeymakinen\facades;
  * @method static ensureBehaviors() Makes sure that the behaviors declared in [[behaviors()]] are attached to this component.
  * @method static null|\yii\base\Behavior getBehavior(string $name) Returns the named behavior object.
  * @method static \yii\base\Behavior[] getBehaviors() Returns all behaviors attached to this component.
+ * @method static string getCallStackItemView() Returns the path of the view file for rendering exceptions and errors call stack element.
+ * @method static bool getDiscardExistingOutput() Returns whether to discard any existing page output before error display.
+ * @method static array getDisplayVars() Returns list of the PHP predefined variables that should be displayed on the error page.
+ * @method static string getErrorAction() Returns the route (e.g. 'site/error') to the controller action that will be used to display external errors.
+ * @method static string getErrorView() Returns the path of the view file for rendering exceptions without call stack information.
+ * @method static \Exception getException() Returns the exception that is being handled currently.
  * @method static string getExceptionName(\Exception $exception) Returns human-readable exception name.
- * @method static string getCallStackItemView() Returns $callStackItemView - the path of the view file for rendering exceptions and errors call stack element.
- * @method static bool getDiscardExistingOutput() Returns $discardExistingOutput - whether to discard any existing page output before error display.
- * @method static array getDisplayVars() Returns $displayVars - list of the PHP predefined variables that should be displayed on the error page.
- * @method static string getErrorAction() Returns $errorAction - the route (e.g. 'site/error') to the controller action that will be used to display external errors.
- * @method static string getErrorView() Returns $errorView - the path of the view file for rendering exceptions without call stack information.
- * @method static \Exception getException() Returns $exception - the exception that is being handled currently.
- * @method static string getExceptionView() Returns $exceptionView - the path of the view file for rendering exceptions.
- * @method static int getMaxSourceLines() Returns $maxSourceLines - maximum number of source code lines to be displayed.
- * @method static int getMaxTraceSourceLines() Returns $maxTraceSourceLines - maximum number of trace source code lines to be displayed.
- * @method static int getMemoryReserveSize() Returns $memoryReserveSize - the size of the reserved memory.
- * @method static string getPreviousExceptionView() Returns $previousExceptionView - the path of the view file for rendering previous exceptions.
+ * @method static string getExceptionView() Returns the path of the view file for rendering exceptions.
+ * @method static int getMaxSourceLines() Returns maximum number of source code lines to be displayed.
+ * @method static int getMaxTraceSourceLines() Returns maximum number of trace source code lines to be displayed.
+ * @method static int getMemoryReserveSize() Returns the size of the reserved memory.
+ * @method static string getPreviousExceptionView() Returns the path of the view file for rendering previous exceptions.
  * @method static bool handleError(int $code, string $message, string $file, int $line) Handles PHP execution errors such as warnings and notices.
  * @method static handleException(\Exception $exception) Handles uncaught PHP exceptions.
  * @method static handleFatalError() Handles fatal PHP errors.
@@ -51,17 +60,17 @@ namespace sergeymakinen\facades;
  * @method static string renderFile(string $_file_, array $_params_) Renders a view file as a PHP script.
  * @method static string renderPreviousExceptions(\Exception $exception) Renders the previous exception stack for a given Exception.
  * @method static string renderRequest() Renders the global variables of the request.
- * @method static setCallStackItemView(string $value) Sets $callStackItemView - the path of the view file for rendering exceptions and errors call stack element.
- * @method static setDiscardExistingOutput(bool $value) Sets $discardExistingOutput - whether to discard any existing page output before error display.
- * @method static setDisplayVars(array $value) Sets $displayVars - list of the PHP predefined variables that should be displayed on the error page.
- * @method static setErrorAction(string $value) Sets $errorAction - the route (e.g. 'site/error') to the controller action that will be used to display external errors.
- * @method static setErrorView(string $value) Sets $errorView - the path of the view file for rendering exceptions without call stack information.
- * @method static setException(\Exception $value) Sets $exception - the exception that is being handled currently.
- * @method static setExceptionView(string $value) Sets $exceptionView - the path of the view file for rendering exceptions.
- * @method static setMaxSourceLines(int $value) Sets $maxSourceLines - maximum number of source code lines to be displayed.
- * @method static setMaxTraceSourceLines(int $value) Sets $maxTraceSourceLines - maximum number of trace source code lines to be displayed.
- * @method static setMemoryReserveSize(int $value) Sets $memoryReserveSize - the size of the reserved memory.
- * @method static setPreviousExceptionView(string $value) Sets $previousExceptionView - the path of the view file for rendering previous exceptions.
+ * @method static setCallStackItemView(string $value) Sets the path of the view file for rendering exceptions and errors call stack element.
+ * @method static setDiscardExistingOutput(bool $value) Sets whether to discard any existing page output before error display.
+ * @method static setDisplayVars(array $value) Sets list of the PHP predefined variables that should be displayed on the error page.
+ * @method static setErrorAction(string $value) Sets the route (e.g. 'site/error') to the controller action that will be used to display external errors.
+ * @method static setErrorView(string $value) Sets the path of the view file for rendering exceptions without call stack information.
+ * @method static setException(\Exception $value) Sets the exception that is being handled currently.
+ * @method static setExceptionView(string $value) Sets the path of the view file for rendering exceptions.
+ * @method static setMaxSourceLines(int $value) Sets maximum number of source code lines to be displayed.
+ * @method static setMaxTraceSourceLines(int $value) Sets maximum number of trace source code lines to be displayed.
+ * @method static setMemoryReserveSize(int $value) Sets the size of the reserved memory.
+ * @method static setPreviousExceptionView(string $value) Sets the path of the view file for rendering previous exceptions.
  * @method static trigger(string $name, \yii\base\Event $event = null) Triggers an event.
  * @method static unregister() Unregisters this error handler by restoring the PHP error and exception handlers.
  */

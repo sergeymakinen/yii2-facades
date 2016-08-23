@@ -1,5 +1,5 @@
-.idea
+/.idea
 /vendor
-composer.phar
-phpunit.phar
-/phpunit.xml
+/composer.phar
+/composer.lock
+/phpunit.phar

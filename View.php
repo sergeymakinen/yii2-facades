@@ -1,4 +1,11 @@
 <?php
+/**
+ * Facades for Yii 2
+ *
+ * @see       https://github.com/sergeymakinen/yii2-facades
+ * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
+ */
 
 namespace sergeymakinen\facades;
 
@@ -8,11 +15,10 @@ namespace sergeymakinen\facades;
  *
  * Facades Yii::$app->get('view') component.
  *
+ * @see \yii\web\View
  * @method static addDynamicPlaceholder(string $placeholder, string $statements) Adds a placeholder for dynamic content.
- * @method static afterRender(string $viewFile, array $params, string $output) This method is invoked right after [[renderFile()]] renders a view file.
  * @method static \yii\base\Behavior attachBehavior(string $name, string|array|\yii\base\Behavior $behavior) Attaches a behavior to this component.
  * @method static attachBehaviors(array $behaviors) Attaches a list of behaviors to the component.
- * @method static bool beforeRender(string $viewFile, array $params) This method is invoked right before [[renderFile()]] renders a view file.
  * @method static \yii\widgets\Block beginBlock(string $id, bool $renderInPlace = false) Begins recording a block.
  * @method static beginBody() Marks the beginning of an HTML body section.
  * @method static bool beginCache(string $id, array $properties = []) Begins fragment caching.
@@ -29,26 +35,26 @@ namespace sergeymakinen\facades;
  * @method static endPage(bool $ajaxMode = false) Marks the ending of an HTML page.
  * @method static ensureBehaviors() Makes sure that the behaviors declared in [[behaviors()]] are attached to this component.
  * @method static mixed evaluateDynamicContent(string $statements) Evaluates the given PHP statements.
+ * @method static \yii\web\AssetBundle[] getAssetBundles() Returns list of the registered asset bundles.
  * @method static \yii\web\AssetManager getAssetManager() Registers the asset manager being used by this view object.
  * @method static null|\yii\base\Behavior getBehavior(string $name) Returns the named behavior object.
  * @method static \yii\base\Behavior[] getBehaviors() Returns all behaviors attached to this component.
+ * @method static array getBlocks() Returns a list of named output blocks.
+ * @method static array getCacheStack() Returns a list of currently active fragment cache widgets.
+ * @method static \yii\base\ViewContextInterface getContext() Returns the context under which the [[renderFile()]] method is being invoked.
+ * @method static array getCss() Returns the registered CSS code blocks.
+ * @method static array getCssFiles() Returns the registered CSS files.
+ * @method static string getDefaultExtension() Returns the default view file extension.
+ * @method static array getDynamicPlaceholders() Returns a list of placeholders for embedding dynamic contents.
+ * @method static array getJs() Returns the registered JS code blocks.
+ * @method static array getJsFiles() Returns the registered JS files.
+ * @method static array getLinkTags() Returns the registered link tags.
+ * @method static array getMetaTags() Returns the registered meta tags.
+ * @method static mixed getParams() Returns custom parameters that are shared among view templates.
+ * @method static array getRenderers() Returns a list of available renderers indexed by their corresponding supported file extensions.
+ * @method static \yii\base\Theme|array|string getTheme() Returns the theme object or the configuration for creating the theme object.
+ * @method static string getTitle() Returns the page title.
  * @method static string|bool getViewFile()
- * @method static \yii\web\AssetBundle[] getAssetBundles() Returns $assetBundles - list of the registered asset bundles.
- * @method static array getBlocks() Returns $blocks - a list of named output blocks.
- * @method static array getCacheStack() Returns $cacheStack - a list of currently active fragment cache widgets.
- * @method static \yii\base\ViewContextInterface getContext() Returns $context - the context under which the [[renderFile()]] method is being invoked.
- * @method static array getCss() Returns $css - the registered CSS code blocks.
- * @method static array getCssFiles() Returns $cssFiles - the registered CSS files.
- * @method static string getDefaultExtension() Returns $defaultExtension - the default view file extension.
- * @method static array getDynamicPlaceholders() Returns $dynamicPlaceholders - a list of placeholders for embedding dynamic contents.
- * @method static array getJs() Returns $js - the registered JS code blocks.
- * @method static array getJsFiles() Returns $jsFiles - the registered JS files.
- * @method static array getLinkTags() Returns $linkTags - the registered link tags.
- * @method static array getMetaTags() Returns $metaTags - the registered meta tags.
- * @method static mixed getParams() Returns $params - custom parameters that are shared among view templates.
- * @method static array getRenderers() Returns $renderers - a list of available renderers indexed by their corresponding supported file extensions.
- * @method static \yii\base\Theme|array|string getTheme() Returns $theme - the theme object or the configuration for creating the theme object.
- * @method static string getTitle() Returns $title - the page title.
  * @method static bool hasEventHandlers(string $name) Returns a value indicating whether there is any handler attached to the named event.
  * @method static head() Marks the position of an HTML head section.
  * @method static bool off(string $name, callable $handler = null) Detaches an existing event handler from this component.
@@ -65,23 +71,23 @@ namespace sergeymakinen\facades;
  * @method static string renderDynamic(string $statements) Renders dynamic content returned by the given PHP statements.
  * @method static string renderFile(string $viewFile, array $params = [], object $context = null) Renders a view file.
  * @method static string renderPhpFile(string $_file_, array $_params_ = []) Renders a view file as a PHP script.
+ * @method static setAssetBundles(\yii\web\AssetBundle[] $value) Sets list of the registered asset bundles.
  * @method static setAssetManager(\yii\web\AssetManager $value) Sets the asset manager.
- * @method static setAssetBundles(\yii\web\AssetBundle[] $value) Sets $assetBundles - list of the registered asset bundles.
- * @method static setBlocks(array $value) Sets $blocks - a list of named output blocks.
- * @method static setCacheStack(array $value) Sets $cacheStack - a list of currently active fragment cache widgets.
- * @method static setContext(\yii\base\ViewContextInterface $value) Sets $context - the context under which the [[renderFile()]] method is being invoked.
- * @method static setCss(array $value) Sets $css - the registered CSS code blocks.
- * @method static setCssFiles(array $value) Sets $cssFiles - the registered CSS files.
- * @method static setDefaultExtension(string $value) Sets $defaultExtension - the default view file extension.
- * @method static setDynamicPlaceholders(array $value) Sets $dynamicPlaceholders - a list of placeholders for embedding dynamic contents.
- * @method static setJs(array $value) Sets $js - the registered JS code blocks.
- * @method static setJsFiles(array $value) Sets $jsFiles - the registered JS files.
- * @method static setLinkTags(array $value) Sets $linkTags - the registered link tags.
- * @method static setMetaTags(array $value) Sets $metaTags - the registered meta tags.
- * @method static setParams(mixed $value) Sets $params - custom parameters that are shared among view templates.
- * @method static setRenderers(array $value) Sets $renderers - a list of available renderers indexed by their corresponding supported file extensions.
- * @method static setTheme(\yii\base\Theme|array|string $value) Sets $theme - the theme object or the configuration for creating the theme object.
- * @method static setTitle(string $value) Sets $title - the page title.
+ * @method static setBlocks(array $value) Sets a list of named output blocks.
+ * @method static setCacheStack(array $value) Sets a list of currently active fragment cache widgets.
+ * @method static setContext(\yii\base\ViewContextInterface $value) Sets the context under which the [[renderFile()]] method is being invoked.
+ * @method static setCss(array $value) Sets the registered CSS code blocks.
+ * @method static setCssFiles(array $value) Sets the registered CSS files.
+ * @method static setDefaultExtension(string $value) Sets the default view file extension.
+ * @method static setDynamicPlaceholders(array $value) Sets a list of placeholders for embedding dynamic contents.
+ * @method static setJs(array $value) Sets the registered JS code blocks.
+ * @method static setJsFiles(array $value) Sets the registered JS files.
+ * @method static setLinkTags(array $value) Sets the registered link tags.
+ * @method static setMetaTags(array $value) Sets the registered meta tags.
+ * @method static setParams(mixed $value) Sets custom parameters that are shared among view templates.
+ * @method static setRenderers(array $value) Sets a list of available renderers indexed by their corresponding supported file extensions.
+ * @method static setTheme(\yii\base\Theme|array|string $value) Sets the theme object or the configuration for creating the theme object.
+ * @method static setTitle(string $value) Sets the page title.
  * @method static trigger(string $name, \yii\base\Event $event = null) Triggers an event.
  */
 class View extends Facade

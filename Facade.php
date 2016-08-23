@@ -1,4 +1,11 @@
 <?php
+/**
+ * Facades for Yii 2
+ *
+ * @see       https://github.com/sergeymakinen/yii2-facades
+ * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
+ */
 
 namespace sergeymakinen\facades;
 
@@ -38,13 +45,13 @@ abstract class Facade
      */
     public static function getFacadeComponentId()
     {
-        throw new InvalidConfigException('Facade must impelemnt getFacadeComponentId method.');
+        throw new InvalidConfigException('Facade must implement getFacadeComponentId method.');
     }
 
     /**
      * Returns a component being facaded.
      *
-     * @return mixed
+     * @return object
      */
     public static function getFacadeComponent()
     {
@@ -128,5 +135,4 @@ abstract class Facade
      */
     private function __clone()
     {}
-
 }

@@ -1,4 +1,11 @@
 <?php
+/**
+ * Facades for Yii 2
+ *
+ * @see       https://github.com/sergeymakinen/yii2-facades
+ * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
+ */
 
 namespace sergeymakinen\facades;
 
@@ -8,6 +15,7 @@ namespace sergeymakinen\facades;
  *
  * Facades Yii::$app->get('i18n') component.
  *
+ * @see \yii\i18n\I18N
  * @method static \yii\base\Behavior attachBehavior(string $name, string|array|\yii\base\Behavior $behavior) Attaches a behavior to this component.
  * @method static attachBehaviors(array $behaviors) Attaches a list of behaviors to the component.
  * @method static array behaviors() Returns a list of behaviors that this component should behave as.
@@ -19,12 +27,12 @@ namespace sergeymakinen\facades;
  * @method static \yii\base\Behavior[] getBehaviors() Returns all behaviors attached to this component.
  * @method static \yii\i18n\MessageFormatter getMessageFormatter() Returns the message formatter instance.
  * @method static \yii\i18n\MessageSource getMessageSource(string $category) Returns the message source for the given category.
- * @method static array getTranslations() Returns $translations - list of [[MessageSource]] configurations or objects.
+ * @method static array getTranslations() Returns list of [[MessageSource]] configurations or objects.
  * @method static bool hasEventHandlers(string $name) Returns a value indicating whether there is any handler attached to the named event.
  * @method static bool off(string $name, callable $handler = null) Detaches an existing event handler from this component.
  * @method static on(string $name, callable $handler, mixed $data = null, bool $append = true) Attaches an event handler to an event.
  * @method static setMessageFormatter(string|array|\yii\i18n\MessageFormatter $value)
- * @method static setTranslations(array $value) Sets $translations - list of [[MessageSource]] configurations or objects.
+ * @method static setTranslations(array $value) Sets list of [[MessageSource]] configurations or objects.
  * @method static string translate(string $category, string $message, array $params, string $language) Translates a message to the specified language.
  * @method static trigger(string $name, \yii\base\Event $event = null) Triggers an event.
  */
