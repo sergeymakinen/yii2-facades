@@ -8,6 +8,9 @@ build:
             - composer global require "fxp/composer-asset-plugin:^1.2"
 imports:
     - php
+tools:
+    php_sim: false
+    php_cpd: false
 filter:
     excluded_paths:
         - vendor/*
