@@ -56,6 +56,40 @@ class Cache extends Facade
     }
 
     /**
+     * Retrieves a value from cache (or stores it if it's not cached) with a specified key.
+     * If the cache already contains such a key, it will be returned, else the default value
+     * will be stored in the cache and returned.
+     *
+     * @param mixed $key a key identifying the cached value. This can be a simple string or
+     * a complex data structure consisting of factors representing the key.
+     * @param callable|mixed $default the value to be cached and retrieved if some value is not already in the cache. This can also be
+     * any callable function that will recieve the key and should return a value.
+     * @param int $duration the number of seconds in which the cached value will expire. 0 means never expire.
+     * @param \yii\caching\Dependency $dependency dependency of the cached item. If the dependency changes,
+     * the corresponding value in the cache will be invalidated when it is fetched via [[get()]].
+     * This parameter is ignored if [[serializer]] is false.
+     *
+     * @return bool whether the value is successfully stored into cache.
+     */
+    public static function cache($key, $default, $duration = 0, $dependency = null)
+    {
+        /**
+         * @var \yii\caching\Cache $cache
+         */
+        $cache = static::getFacadeComponent();
+        $value = $cache->get($key);
+        if ($value === false) {
+            if ($default instanceof \Closure) {
+                $value = call_user_func($default, $key);
+            } else {
+                $value = $default;
+            }
+            $cache->set($key, $value, $duration, $dependency);
+        }
+        return $value;
+    }
+
+    /**
      * Retrieves a value from cache with a specified key.
      *
      * @param mixed $key a key identifying the cached value. This can be a simple string or
@@ -81,35 +115,17 @@ class Cache extends Facade
 
     /**
      * Retrieves a value from cache (or stores it if it's not cached) with a specified key.
-     * If the cache already contains such a key, it will be returned, else the default value
-     * will be stored in the cache and returned.
      *
-     * @param mixed $key a key identifying the cached value. This can be a simple string or
-     * a complex data structure consisting of factors representing the key.
-     * @param callable|mixed $default the value to be cached and retrieved if some value is not already in the cache. This can also be
-     * any callable function that will recieve the key and should return a value.
-     * @param int $duration the number of seconds in which the cached value will expire. 0 means never expire.
-     * @param \yii\caching\Dependency $dependency dependency of the cached item. If the dependency changes,
-     * the corresponding value in the cache will be invalidated when it is fetched via [[get()]].
-     * This parameter is ignored if [[serializer]] is false.
+     * @see cache
+     * @param mixed $key a key identifying the cached value.
+     * @param callable|mixed $default the value to be cached and retrieved if some value is not already in the cache.
+     * @param int $duration the number of seconds in which the cached value will expire.
+     * @param \yii\caching\Dependency $dependency dependency of the cached item.
      *
-     * @return bool whether the value is successfully stored into cache
+     * @return bool whether the value is successfully stored into cache.
      */
     public static function getOrSet($key, $default, $duration = 0, $dependency = null)
     {
-        /**
-         * @var \yii\caching\Cache $cache
-         */
-        $cache = static::getFacadeComponent();
-        $value = $cache->get($key);
-        if ($value === false) {
-            if ($default instanceof \Closure) {
-                $value = call_user_func($default, $key);
-            } else {
-                $value = $default;
-            }
-            $cache->set($key, $value, $duration, $dependency);
-        }
-        return $value;
+        return static::cache($key, $default, $duration, $dependency);
     }
 }
