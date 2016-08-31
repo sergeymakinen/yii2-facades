@@ -4,6 +4,28 @@ Laravel like facades support for Yii 2 application components. Just what you wan
 
 [![Code Quality](https://img.shields.io/scrutinizer/g/sergeymakinen/yii2-facades.svg?style=flat-square)](https://scrutinizer-ci.com/g/sergeymakinen/yii2-facades) [![Packagist Version](https://img.shields.io/packagist/v/sergeymakinen/yii2-facades.svg?style=flat-square)](https://packagist.org/packages/sergeymakinen/yii2-facades) [![Total Downloads](https://img.shields.io/packagist/dt/sergeymakinen/yii2-facades.svg?style=flat-square)](https://packagist.org/packages/sergeymakinen/yii2-facades) [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
+## Table of contents
+
+* [Installation](#installation)
+* [Usage](#usage)
+  * [Generate random string](#generate-random-string)
+  * [Fetch all users (just an example!)](#fetch-all-users-just-an-example)
+  * [Format currency](#format-currency)
+* [Access properties](#access-properties)
+* [Available facades](#available-facades)
+* [Helpers](#helpers)
+  * [Cache](#cache)
+    * [cache](#cache-1)
+    * [get](#get)
+  * [Response](#response)
+    * [bare](#bare)
+    * [html](#html)
+    * [json](#json)
+    * [jsonp](#jsonp)
+    * [raw](#raw)
+    * [xml](#xml)
+* [Extending](#extending)
+
 ## Installation
 
 The preferred way to install this extension is through [composer](https://getcomposer.org/download/).
@@ -68,7 +90,7 @@ After:
 $price = Formatter::asCurrency(123456.78, 'USD');
 ```
 
-## Accessing properties
+## Access properties
 
 Any class public property `$foo` can be got via an accessor:
 
@@ -80,12 +102,143 @@ And set:
 ```php
 YourFacadeName::setFoo($value)
 ```
+## Available facades
+
+<table>
+<thead>
+<th>Name</th>
+<th>Facaded component alias</th>
+<th>Component/interface</th>
+</thead>
+<tbody>
+<tr>
+<td><code>Asset</code></td>
+<td><code>Yii::$app->assetManager</code></td>
+<td><code>yii\web\AssetManager</code></td>
+</tr>
+<tr>
+<td><code>Auth</code></td>
+<td><code>Yii::$app->auth</code></td>
+<td><code>yii\rbac\ManagerInterface</code></td>
+</tr>
+<tr>
+<td><code>Cache</code></td>
+<td><code>Yii::$app->cache</code></td>
+<td><code>yii\caching\Cache</code></td>
+</tr>
+<tr>
+<td><code>Db</code></td>
+<td><code>Yii::$app->db</code></td>
+<td><code>yii\db\Connection</code></td>
+</tr>
+<tr>
+<td rowspan="2"><code>Error</code></td>
+<td rowspan="2"><code>Yii::$app->errorHandler</code></td>
+<td><code>yii\console\ErrorHandler</code></td>
+</tr>
+<tr>
+<td><code>yii\web\ErrorHandler</code></td>
+</tr>
+<tr>
+<td><code>Formatter</code></td>
+<td><code>Yii::$app->formatter</code></td>
+<td><code>yii\i18n\Formatter</code></td>
+</tr>
+<tr>
+<td><code>Http</code></td>
+<td><code>Yii::$app->httpClient</code></td>
+<td><code>yii\httpclient\Client</code></td>
+</tr>
+<tr>
+<td><code>I18n</code></td>
+<td><code>Yii::$app->i18n</code></td>
+<td><code>yii\i18n\I18N</code></td>
+</tr>
+<tr>
+<td><code>Log</code></td>
+<td><code>Yii::$app->log</code></td>
+<td><code>yii\log\Dispatcher</code></td>
+</tr>
+<tr>
+<td><code>Mailer</code></td>
+<td><code>Yii::$app->mailer</code></td>
+<td><code>yii\swiftmailer\Mailer</code></td>
+</tr>
+<tr>
+<td><code>Redis</code></td>
+<td><code>Yii::$app->redis</code></td>
+<td><code>yii\redis\Connection</code></td>
+</tr>
+<tr>
+<td rowspan="2"><code>Request</code></td>
+<td rowspan="2"><code>Yii::$app->request</code></td>
+<td><code>yii\console\Request</code></td>
+</tr>
+<tr>
+<td><code>yii\web\Request</code></td>
+</tr>
+<tr>
+<td rowspan="2"><code>Response</code></td>
+<td rowspan="2"><code>Yii::$app->response</code></td>
+<td><code>yii\console\Response</code></td>
+</tr>
+<tr>
+<td><code>yii\web\Response</code></td>
+</tr>
+<tr>
+<td><code>Router</code></td>
+<td><code>Yii::$app->urlManager</code></td>
+<td><code>yii\web\UrlManager</code></td>
+</tr>
+<tr>
+<td><code>Security</code></td>
+<td><code>Yii::$app->security</code></td>
+<td><code>yii\base\Security</code></td>
+</tr>
+<tr>
+<td><code>Session</code></td>
+<td><code>Yii::$app->session</code></td>
+<td><code>yii\web\Session</code></td>
+</tr>
+<tr>
+<td><code>Url</code></td>
+<td><code>Yii::$app->urlManager</code></td>
+<td><code>yii\web\UrlManager</code></td>
+</tr>
+<tr>
+<td><code>User</code></td>
+<td><code>Yii::$app->user</code></td>
+<td><code>yii\web\User</code></td>
+</tr>
+<tr>
+<td><code>View</code></td>
+<td><code>Yii::$app->view</code></td>
+<td><code>yii\web\View</code></td>
+</tr>
+</tbody>
+</table>
 
 ## Helpers
 
 Some facades also contain useful helpers to make a development more quick and elegant.
 
 ### Cache
+
+#### cache
+
+Alias: `getOrSet`
+
+```php
+public static function cache($key, $default, $duration = 0, $dependency = null)
+```
+
+Retrieves a value using the provided key or the specified default value if the value is not cached. If the value is not in the cache, it will be cached. The default value can also be a closure:
+
+```php
+$users = Cache::cache('users', function () {
+    return app\models\Users::findAll();
+}, 3600);
+```
 
 #### get
 
@@ -102,20 +255,6 @@ $options = Cache::get('options', function () {
         'option2' => true
     ];
 });
-```
-
-#### getOrSet
-
-```php
-public static function getOrSet($key, $default, $duration = 0, $dependency = null)
-```
-
-Retrieves a value using the provided key or the specified default value if the value is not cached. If the value is not in the cache, it will be cached. The default value can also be a closure:
-
-```php
-$users = Cache::getOrSet('users', function () {
-    return app\models\Users::findAll();
-}, 3600);
 ```
 
 ### Response
