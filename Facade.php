@@ -22,7 +22,7 @@ abstract class Facade
      *
      * @var array
      */
-    private static $_accessors;
+    private static $_accessors = [];
 
     /**
      * The facaded application.
@@ -36,7 +36,27 @@ abstract class Facade
      *
      * @var object[]
      */
-    private static $_components;
+    private static $_components = [];
+
+    /**
+     * Clears a resolved facade component.
+     *
+     * @param string $id
+     */
+    public static function clearResolvedFacadeComponent($id)
+    {
+        unset(self::$_accessors[$id]);
+        unset(self::$_components[$id]);
+    }
+
+    /**
+     * Clears all resolved facade components.
+     */
+    public static function clearResolvedFacadeComponents()
+    {
+        self::$_accessors = [];
+        self::$_components = [];
+    }
 
     /**
      * Returns a component ID being facaded.
@@ -83,6 +103,7 @@ abstract class Facade
     public static function setFacadeApplication(Application $value)
     {
         self::$_app = $value;
+        self::clearResolvedFacadeComponents();
     }
 
     /**
