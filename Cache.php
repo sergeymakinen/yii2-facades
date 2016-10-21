@@ -2,6 +2,8 @@
 /**
  * Facades for Yii 2
  *
+ * Generated on Yii 2.0.10
+ *
  * @see       https://github.com/sergeymakinen/yii2-facades
  * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
  * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
@@ -11,39 +13,98 @@ namespace sergeymakinen\facades;
 
 /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
 /**
- * Cache facade.
+ * Yii::$app->get('cache') facade.
  *
- * Facades Yii::$app->get('cache') component.
+ * Methods
  *
- * @see \yii\caching\Cache
  * @method static bool add(mixed $key, mixed $value, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores a value identified by a key into cache if the cache does not contain this key.
+ * @see \yii\caching\Cache::add
+ *
  * @method static \yii\base\Behavior attachBehavior(string $name, string|array|\yii\base\Behavior $behavior) Attaches a behavior to this component.
- * @method static attachBehaviors(array $behaviors) Attaches a list of behaviors to the component.
+ * @see \yii\base\Component::attachBehavior
+ *
+ * @method static void attachBehaviors(array $behaviors) Attaches a list of behaviors to the component.
+ * @see \yii\base\Component::attachBehaviors
+ *
  * @method static array behaviors() Returns a list of behaviors that this component should behave as.
+ * @see \yii\base\Component::behaviors
+ *
  * @method static string buildKey(mixed $key) Builds a normalized cache key from a given key.
+ * @see \yii\caching\Cache::buildKey
+ *
  * @method static bool delete(mixed $key) Deletes a value with the specified key from cache.
+ * @see \yii\caching\Cache::delete
+ *
  * @method static null|\yii\base\Behavior detachBehavior(string $name) Detaches a behavior from the component.
- * @method static detachBehaviors() Detaches all behaviors from the component.
- * @method static ensureBehaviors() Makes sure that the behaviors declared in [[behaviors()]] are attached to this component.
+ * @see \yii\base\Component::detachBehavior
+ *
+ * @method static void detachBehaviors() Detaches all behaviors from the component.
+ * @see \yii\base\Component::detachBehaviors
+ *
+ * @method static void ensureBehaviors() Makes sure that the behaviors declared in [[behaviors()]] are attached to this component.
+ * @see \yii\base\Component::ensureBehaviors
+ *
  * @method static bool exists(mixed $key) Checks whether a specified key exists in the cache.
+ * @see \yii\caching\Cache::exists
+ *
  * @method static bool flush() Deletes all values from cache.
+ * @see \yii\caching\Cache::flush
+ *
+ * @method static mixed get(mixed $key) Retrieves a value from cache with a specified key.
+ * @see \yii\caching\Cache::get
+ *
  * @method static null|\yii\base\Behavior getBehavior(string $name) Returns the named behavior object.
+ * @see \yii\base\Component::getBehavior
+ *
  * @method static \yii\base\Behavior[] getBehaviors() Returns all behaviors attached to this component.
- * @method static string getKeyPrefix() Returns a string prefixed to every cache key so that it is unique globally in the whole cache storage.
- * @method static array|bool getSerializer() Returns the functions used to serialize and unserialize cached data.
+ * @see \yii\base\Component::getBehaviors
+ *
  * @method static bool hasEventHandlers(string $name) Returns a value indicating whether there is any handler attached to the named event.
+ * @see \yii\base\Component::hasEventHandlers
+ *
  * @method static bool madd(array $items, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores multiple items in cache.
+ * @see \yii\caching\Cache::madd
+ *
  * @method static array mget(string[] $keys) Retrieves multiple values from cache with the specified keys.
+ * @see \yii\caching\Cache::mget
+ *
  * @method static bool mset(array $items, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores multiple items in cache.
+ * @see \yii\caching\Cache::mset
+ *
  * @method static bool multiAdd(array $items, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores multiple items in cache.
+ * @see \yii\caching\Cache::multiAdd
+ *
  * @method static array multiGet(string[] $keys) Retrieves multiple values from cache with the specified keys.
+ * @see \yii\caching\Cache::multiGet
+ *
  * @method static bool multiSet(array $items, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores multiple items in cache.
+ * @see \yii\caching\Cache::multiSet
+ *
  * @method static bool off(string $name, callable $handler = null) Detaches an existing event handler from this component.
- * @method static on(string $name, callable $handler, mixed $data = null, bool $append = true) Attaches an event handler to an event.
+ * @see \yii\base\Component::off
+ *
+ * @method static void on(string $name, callable $handler, mixed $data = null, bool $append = true) Attaches an event handler to an event.
+ * @see \yii\base\Component::on
+ *
  * @method static bool set(mixed $key, mixed $value, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores a value identified by a key into cache.
- * @method static setKeyPrefix(string $value) Sets a string prefixed to every cache key so that it is unique globally in the whole cache storage.
- * @method static setSerializer(array|bool $value) Sets the functions used to serialize and unserialize cached data.
- * @method static trigger(string $name, \yii\base\Event $event = null) Triggers an event.
+ * @see \yii\caching\Cache::set
+ *
+ * @method static void trigger(string $name, \yii\base\Event $event = null) Triggers an event.
+ * @see \yii\base\Component::trigger
+ *
+ * Property accessors
+ *
+ * @method static string getKeyPrefix() Returns a string prefixed to every cache key so that it is unique globally in the whole cache storage.
+ * @see \yii\caching\Cache::keyPrefix
+ *
+ * @method static null|array|bool getSerializer() Returns the functions used to serialize and unserialize cached data.
+ * @see \yii\caching\Cache::serializer
+ *
+ * @method static void setKeyPrefix(string $value) Sets a string prefixed to every cache key so that it is unique globally in the whole cache storage.
+ * @see \yii\caching\Cache::keyPrefix
+ *
+ * @method static void setSerializer(null|array|bool $value) Sets the functions used to serialize and unserialize cached data.
+ * @see \yii\caching\Cache::serializer
  */
 class Cache extends Facade
 {
