@@ -6,7 +6,7 @@
     "type": "yii2-extension",
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/sergeymakinen/yii2-facades/issues?state=open",
+        "issues": "https://github.com/sergeymakinen/yii2-facades/issues",
         "source": "https://github.com/sergeymakinen/yii2-facades"
     },
     "authors": [
@@ -18,7 +18,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "yiisoft/yii2": "~2.0.0"
+        "yiisoft/yii2": "~2.0.1"
     },
     "autoload": {
         "psr-4": {
