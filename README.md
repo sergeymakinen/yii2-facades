@@ -4,6 +4,8 @@ Laravel like facades support for Yii 2 application components. Just what you wan
 
 [![Code Quality](https://img.shields.io/scrutinizer/g/sergeymakinen/yii2-facades.svg?style=flat-square)](https://scrutinizer-ci.com/g/sergeymakinen/yii2-facades) [![Packagist Version](https://img.shields.io/packagist/v/sergeymakinen/yii2-facades.svg?style=flat-square)](https://packagist.org/packages/sergeymakinen/yii2-facades) [![Total Downloads](https://img.shields.io/packagist/dt/sergeymakinen/yii2-facades.svg?style=flat-square)](https://packagist.org/packages/sergeymakinen/yii2-facades) [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/3d6f8afa-4baf-40df-9923-2053ece59b7c/big.png)](https://insight.sensiolabs.com/projects/3d6f8afa-4baf-40df-9923-2053ece59b7c)
+
 ## Table of contents
 
 * [Installation](#installation)
