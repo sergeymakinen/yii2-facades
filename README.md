@@ -2,9 +2,9 @@
 
 Laravel like facades support for Yii 2 application components. Just what you want: simple, extensive and with an IDE auto completion support via [PHPDoc](https://www.phpdoc.org) so you won't be disappointed.
 
-[![Code Quality](https://img.shields.io/scrutinizer/g/sergeymakinen/yii2-facades.svg?style=flat-square)](https://scrutinizer-ci.com/g/sergeymakinen/yii2-facades) [![Packagist Version](https://img.shields.io/packagist/v/sergeymakinen/yii2-facades.svg?style=flat-square)](https://packagist.org/packages/sergeymakinen/yii2-facades) [![Total Downloads](https://img.shields.io/packagist/dt/sergeymakinen/yii2-facades.svg?style=flat-square)](https://packagist.org/packages/sergeymakinen/yii2-facades) [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Code Quality](https://img.shields.io/scrutinizer/g/sergeymakinen/yii2-facades.svg?style=flat-square)](https://scrutinizer-ci.com/g/sergeymakinen/yii2-facades) [![Build Status](https://img.shields.io/scrutinizer/build/g/sergeymakinen/yii2-facades.svg?style=flat-square)](https://scrutinizer-ci.com/g/sergeymakinen/yii2-facades/build-status/master) [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/sergeymakinen/yii2-facades.svg?style=flat-square)](https://scrutinizer-ci.com/g/sergeymakinen/yii2-facades) [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/3d6f8afa-4baf-40df-9923-2053ece59b7c.svg?style=flat-square)](https://insight.sensiolabs.com/projects/3d6f8afa-4baf-40df-9923-2053ece59b7c)
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/3d6f8afa-4baf-40df-9923-2053ece59b7c/big.png)](https://insight.sensiolabs.com/projects/3d6f8afa-4baf-40df-9923-2053ece59b7c)
+[![Packagist Version](https://img.shields.io/packagist/v/sergeymakinen/yii2-facades.svg?style=flat-square)](https://packagist.org/packages/sergeymakinen/yii2-facades) [![Total Downloads](https://img.shields.io/packagist/dt/sergeymakinen/yii2-facades.svg?style=flat-square)](https://packagist.org/packages/sergeymakinen/yii2-facades) [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 ## Table of contents
 
