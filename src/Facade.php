@@ -141,19 +141,25 @@ abstract class Facade
 
     /**
      * @inheritDoc
+     * @codeCoverageIgnore
      */
     private function __construct()
-    {}
+    {
+    }
 
     /**
      * @inheritDoc
+     * @codeCoverageIgnore
      */
     private function __wakeup()
-    {}
+    {
+    }
 
     /**
      * @inheritDoc
+     * @codeCoverageIgnore
      */
     private function __clone()
-    {}
+    {
+    }
 }

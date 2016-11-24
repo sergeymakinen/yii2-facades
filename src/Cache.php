@@ -50,9 +50,6 @@ namespace sergeymakinen\facades;
  * @method static bool flush() Deletes all values from cache.
  * @see \yii\caching\Cache::flush
  *
- * @method static mixed get(mixed $key) Retrieves a value from cache with a specified key.
- * @see \yii\caching\Cache::get
- *
  * @method static null|\yii\base\Behavior getBehavior(string $name) Returns the named behavior object.
  * @see \yii\base\Component::getBehavior
  *
@@ -130,7 +127,7 @@ class Cache extends Facade
      * the corresponding value in the cache will be invalidated when it is fetched via [[get()]].
      * This parameter is ignored if [[serializer]] is false.
      *
-     * @return bool whether the value is successfully stored into cache.
+     * @return mixed the value stored into cache.
      */
     public static function cache($key, $default, $duration = 0, $dependency = null)
     {

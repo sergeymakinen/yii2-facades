@@ -20,12 +20,15 @@
     "require": {
         "yiisoft/yii2": "~2.0.1"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    },
     "config": {
         "process-timeout": 1800
     },
     "autoload": {
         "psr-4": {
-            "sergeymakinen\\facades\\": ""
+            "sergeymakinen\\facades\\": "src"
         }
     }
 }

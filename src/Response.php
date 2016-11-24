@@ -11,6 +11,8 @@
 
 namespace sergeymakinen\facades;
 
+use yii\helpers\Url;
+
 /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
 /**
  * Yii::$app->get('response') facade.
@@ -318,8 +320,7 @@ class Response extends Facade
         $response->data = $data;
         foreach ($headers as $name => $value) {
             if (strtolower($name) === 'location') {
-                /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
-                $value = \yii\helpers\Url::to($value);
+                $value = Url::to($value);
                 if (strpos($value, '/') === 0 && strpos($value, '//') !== 0) {
                     $value = Request::getHostInfo() . $value;
                 }
