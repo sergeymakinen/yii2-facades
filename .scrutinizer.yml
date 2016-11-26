@@ -6,16 +6,10 @@ build:
         before:
             - sudo composer self-update
             - composer config -g repositories.asset-packagist composer https://asset-packagist.org
-    tests:
-        override:
-            -
-                command: 'vendor/bin/phpunit --coverage-clover=coverage'
-                coverage:
-                    file: 'coverage'
-                    format: 'clover'
 imports:
     - php
 tools:
+    external_code_coverage: true
     php_cpd: false
     php_sim: false
 filter:
