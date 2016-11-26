@@ -20,11 +20,12 @@ before_install:
 install:
     - composer config -g repositories.asset-packagist composer https://asset-packagist.org
     - travis_retry composer update --no-interaction
-before_script:
-    - echo -e "\033[1;33mPHP version\033[0m"
-    - php --version
-    - echo -e "\033[1;33m$Installed Composer packages\033[0m"
     - composer show
+before_script:
+    - |
+      if [ -z "$PHPUNIT_COVERAGE" ]; then
+          phpenv config-rm xdebug.ini
+      fi
 script:
     - vendor/bin/phpunit $PHPUNIT_COVERAGE
 after_success:
