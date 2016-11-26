@@ -17,15 +17,14 @@ cache:
         - vendor
 before_install:
     - stty cols 120
-install:
-    - composer config -g repositories.asset-packagist composer https://asset-packagist.org
-    - travis_retry composer update --no-interaction
-    - composer show
-before_script:
     - |
       if [ -z "$PHPUNIT_COVERAGE" ]; then
           phpenv config-rm xdebug.ini
       fi
+install:
+    - composer config -g repositories.asset-packagist composer https://asset-packagist.org
+    - travis_retry composer update --no-interaction
+    - composer show
 script:
     - vendor/bin/phpunit $PHPUNIT_COVERAGE
 after_success:
