@@ -1,4 +1,6 @@
 sudo: false
+git:
+    depth: 1
 language: php
 php:
     - 5.4
@@ -13,10 +15,12 @@ matrix:
 cache:
     directories:
         - vendor
+before_install:
+    - stty cols 120
 install:
     - composer config -g repositories.asset-packagist composer https://asset-packagist.org
     - travis_retry composer update --no-interaction
-    - composer show -i
+    - composer show
 script:
     - vendor/bin/phpunit $PHPUNIT_COVERAGE
 after_success:
