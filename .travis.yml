@@ -16,7 +16,7 @@ cache:
 install:
     - composer config -g repositories.asset-packagist composer https://asset-packagist.org
     - travis_retry composer update --no-interaction
-    - composer show
+    - composer show -i
 script:
     - vendor/bin/phpunit $PHPUNIT_COVERAGE
 after_success:
