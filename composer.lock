@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "75420ed1b51ad29c5ca78545bd06d4ef",
-    "content-hash": "4773caf3b8518d0e52df61d2c6f89f7d",
+    "hash": "f298c319fec995b05f7231e6f5b6a988",
+    "content-hash": "b1d3e72b4f0b284458a74dfca69f67a3",
     "packages": [
         {
             "name": "bower-asset/jquery",
@@ -187,12 +187,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "694618dad753d447ab8a3317f27c56189651368d"
+                "reference": "1c4050ccae5d8728cfc63519303272f153758d74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/694618dad753d447ab8a3317f27c56189651368d",
-                "reference": "694618dad753d447ab8a3317f27c56189651368d",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/1c4050ccae5d8728cfc63519303272f153758d74",
+                "reference": "1c4050ccae5d8728cfc63519303272f153758d74",
                 "shasum": ""
             },
             "require": {
@@ -273,7 +273,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-11-22 16:49:55"
+            "time": "2016-11-25 07:41:30"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -521,16 +521,16 @@
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "0.2",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "b39c7a5b194f9ed7bd0dd345c751007a41862443"
+                "reference": "e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/b39c7a5b194f9ed7bd0dd345c751007a41862443",
-                "reference": "b39c7a5b194f9ed7bd0dd345c751007a41862443",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb",
+                "reference": "e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb",
                 "shasum": ""
             },
             "require": {
@@ -564,7 +564,7 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2016-06-10 07:14:17"
+            "time": "2016-11-25 06:54:22"
         },
         {
             "name": "phpspec/prophecy",

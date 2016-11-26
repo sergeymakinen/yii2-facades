@@ -3,7 +3,6 @@ language: php
 php:
     - 5.4
     - 5.5
-    - 5.6
     - 7.0
     - 7.1
 matrix:
@@ -15,9 +14,9 @@ cache:
     directories:
         - vendor
 install:
-    - travis_retry composer config -g repositories.asset-packagist composer https://asset-packagist.org
+    - composer config -g repositories.asset-packagist composer https://asset-packagist.org
     - travis_retry composer update --no-interaction
-    - composer info -i
+    - composer info
 script:
     - vendor/bin/phpunit $PHPUNIT_COVERAGE
 after_script:
@@ -25,5 +24,6 @@ after_script:
       if [ -n "$PHPUNIT_COVERAGE" ]; then
           travis_retry wget https://scrutinizer-ci.com/ocular.phar
           php ocular.phar code-coverage:upload --format=php-clover coverage.xml
+          travis_retry wget https://codecov.io/bash
+          bash ./bash
       fi
-    - bash <(curl -s https://codecov.io/bash)
