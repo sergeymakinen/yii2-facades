@@ -12,7 +12,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         $this->destroyApplication();
     }
 
-    protected function createConsoleApplication($config = [], $class = \yii\console\Application::class)
+    protected function createConsoleApplication($config = [], $class = 'yii\console\Application')
     {
         new $class(ArrayHelper::merge([
             'id' => 'console-test',
@@ -21,7 +21,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         ], $config));
     }
 
-    protected function createWebApplication($config = [], $class = \yii\web\Application::class)
+    protected function createWebApplication($config = [], $class = 'yii\web\Application')
     {
         new $class(ArrayHelper::merge([
             'id' => 'web-test',

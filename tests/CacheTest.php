@@ -4,7 +4,6 @@ namespace sergeymakinen\tests;
 
 use sergeymakinen\facades\Cache;
 use sergeymakinen\facades\Facade;
-use yii\caching\FileCache;
 
 class CacheTest extends TestCase
 {
@@ -45,7 +44,7 @@ class CacheTest extends TestCase
         $this->createConsoleApplication([
             'components' => [
                 'cache' => [
-                    'class' => FileCache::class
+                    'class' => 'yii\caching\FileCache'
                 ]
             ]
         ]);

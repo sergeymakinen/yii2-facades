@@ -2,7 +2,9 @@
 
 namespace sergeymakinen\tests\mocks;
 
-class Component
+use yii\base\Object;
+
+class Component extends Object
 {
     public $property = 'value';
 
