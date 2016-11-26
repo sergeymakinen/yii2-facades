@@ -42,11 +42,13 @@ class FacadeTest extends TestCase
         'View' => 'view',
     ];
 
+    /**
+     * @expectedException \yii\base\InvalidConfigException
+     */
     public function testGetFacadeComponentId()
     {
         $this->assertSame('component', ComponentFacade::getFacadeComponentId());
         $this->assertSame('component2', Component2Facade::getFacadeComponentId());
-        $this->expectException('yii\base\InvalidConfigException');
         Facade::getFacadeComponentId();
     }
 
