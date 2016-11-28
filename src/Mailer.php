@@ -1,6 +1,6 @@
 <?php
 /**
- * Facades for Yii 2
+ * Facades for Yii 2.
  *
  * Generated on Yii 2.0.10
  *

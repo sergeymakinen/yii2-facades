@@ -15,7 +15,7 @@ class CacheTest extends TestCase
 
     public function testCache()
     {
-        $this->assertEquals(false, Cache::get($this->key));
+        $this->assertFalse(Cache::get($this->key));
         $this->assertEquals($this->value, Cache::cache($this->key, $this->value));
         $this->assertEquals($this->value, Cache::get($this->key));
         $this->assertEquals($this->value, Cache::cache($this->key, function () {
@@ -44,9 +44,9 @@ class CacheTest extends TestCase
         $this->createConsoleApplication([
             'components' => [
                 'cache' => [
-                    'class' => 'yii\caching\FileCache'
-                ]
-            ]
+                    'class' => 'yii\caching\FileCache',
+                ],
+            ],
         ]);
         Facade::setFacadeApplication(\Yii::$app);
         Cache::flush();

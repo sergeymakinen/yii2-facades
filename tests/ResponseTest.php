@@ -10,12 +10,12 @@ class ResponseTest extends TestCase
 {
     protected $headers = [
         'foo' => 'bar',
-        'location' => '/'
+        'location' => '/',
     ];
 
     protected $data = [
         'foo' => 'bar',
-        'bar' => 'foo'
+        'bar' => 'foo',
     ];
 
     public function testBare()
@@ -42,7 +42,7 @@ class ResponseTest extends TestCase
         $response = Response::jsonp($this->data, 'foobar', $this->headers);
         $this->checkResponse($response, \yii\web\Response::FORMAT_JSONP, [
             'callback' => 'foobar',
-            'data' => $this->data
+            'data' => $this->data,
         ]);
     }
 

@@ -12,12 +12,12 @@ class FacadeTest extends TestCase
     protected $config = [
         'components' => [
             'component' => [
-                'class' => 'sergeymakinen\tests\mocks\Component'
+                'class' => 'sergeymakinen\tests\mocks\Component',
             ],
             'component2' => [
-                'class' => 'sergeymakinen\tests\mocks\Component2'
-            ]
-        ]
+                'class' => 'sergeymakinen\tests\mocks\Component2',
+            ],
+        ],
     ];
 
     protected $mappings = [
@@ -132,7 +132,7 @@ class FacadeTest extends TestCase
         $this->assertNotSame(\Yii::$app, $oldApp);
         $this->assertSame($oldApp, Facade::getFacadeApplication());
         $this->assertNotSame(\Yii::$app, Facade::getFacadeApplication());
-        
+
         Facade::setFacadeApplication(\Yii::$app);
         $accessors = $this->getInaccessibleProperty('sergeymakinen\facades\Facade', '_accessors');
         $components = $this->getInaccessibleProperty('sergeymakinen\facades\Facade', '_components');

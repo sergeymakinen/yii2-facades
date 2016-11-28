@@ -1,6 +1,6 @@
 <?php
 /**
- * Facades for Yii 2
+ * Facades for Yii 2.
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
  * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
@@ -45,8 +45,7 @@ abstract class Facade
      */
     public static function clearResolvedFacadeComponent($id)
     {
-        unset(self::$_accessors[$id]);
-        unset(self::$_components[$id]);
+        unset(self::$_accessors[$id], self::$_components[$id]);
     }
 
     /**
@@ -134,7 +133,7 @@ abstract class Facade
         } else {
             return call_user_func_array([
                 static::getFacadeComponent(),
-                $name
+                $name,
             ], $arguments);
         }
     }

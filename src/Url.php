@@ -1,6 +1,6 @@
 <?php
 /**
- * Facades for Yii 2
+ * Facades for Yii 2.
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
  * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)

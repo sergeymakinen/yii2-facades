@@ -1,6 +1,6 @@
 <?php
 /**
- * Facades for Yii 2
+ * Facades for Yii 2.
  *
  * Generated on Yii 2.0.10
  *
@@ -269,7 +269,7 @@ class Response extends Facade
     {
         return static::sendFormat(\yii\web\Response::FORMAT_JSONP, [
             'callback' => $callback,
-            'data' => $data
+            'data' => $data,
         ], $headers);
     }
 
