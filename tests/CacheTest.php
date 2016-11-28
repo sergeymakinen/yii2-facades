@@ -27,6 +27,12 @@ class CacheTest extends TestCase
             return $this->default;
         }));
         $this->assertEquals($this->default, Cache::get($this->key));
+
+        Cache::delete($this->key);
+        $this->assertEquals($this->default, Cache::getOrSet($this->key, function () {
+            return $this->default;
+        }));
+        $this->assertEquals($this->default, Cache::get($this->key));
     }
 
     public function testGet()
