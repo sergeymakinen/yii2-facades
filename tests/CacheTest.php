@@ -1,6 +1,6 @@
 <?php
 
-namespace sergeymakinen\tests;
+namespace sergeymakinen\tests\facades;
 
 use sergeymakinen\facades\Cache;
 use sergeymakinen\facades\Facade;
@@ -12,6 +12,20 @@ class CacheTest extends TestCase
     protected $default = 'foo';
 
     protected $value = 'bar';
+
+    protected function setUp()
+    {
+        parent::setUp();
+        $this->createConsoleApplication([
+            'components' => [
+                'cache' => [
+                    'class' => 'yii\caching\FileCache',
+                ],
+            ],
+        ]);
+        Facade::setFacadeApplication(\Yii::$app);
+        Cache::flush();
+    }
 
     public function testCache()
     {
@@ -37,24 +51,10 @@ class CacheTest extends TestCase
 
     public function testGet()
     {
-        $this->assertEquals(false, Cache::get($this->key));
+        $this->assertFalse(Cache::get($this->key));
         $this->assertEquals($this->default, Cache::get($this->key, $this->default));
         $this->assertEquals($this->value, Cache::get($this->key, function () {
             return $this->value;
         }));
-    }
-
-    protected function setUp()
-    {
-        parent::setUp();
-        $this->createConsoleApplication([
-            'components' => [
-                'cache' => [
-                    'class' => 'yii\caching\FileCache',
-                ],
-            ],
-        ]);
-        Facade::setFacadeApplication(\Yii::$app);
-        Cache::flush();
     }
 }

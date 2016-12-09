@@ -1,6 +1,6 @@
 <?php
 
-namespace sergeymakinen\tests\mocks;
+namespace sergeymakinen\tests\facades\mocks;
 
 class Component2Facade extends ComponentFacade
 {

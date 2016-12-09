@@ -1,21 +1,21 @@
 <?php
 
-namespace sergeymakinen\tests;
+namespace sergeymakinen\tests\facades;
 
 use sergeymakinen\facades\Facade;
-use sergeymakinen\tests\mocks\Component;
-use sergeymakinen\tests\mocks\Component2Facade;
-use sergeymakinen\tests\mocks\ComponentFacade;
+use sergeymakinen\tests\facades\mocks\Component;
+use sergeymakinen\tests\facades\mocks\Component2Facade;
+use sergeymakinen\tests\facades\mocks\ComponentFacade;
 
 class FacadeTest extends TestCase
 {
     protected $config = [
         'components' => [
             'component' => [
-                'class' => 'sergeymakinen\tests\mocks\Component',
+                'class' => 'sergeymakinen\tests\facades\mocks\Component',
             ],
             'component2' => [
-                'class' => 'sergeymakinen\tests\mocks\Component2',
+                'class' => 'sergeymakinen\tests\facades\mocks\Component2',
             ],
         ],
     ];
@@ -41,6 +41,13 @@ class FacadeTest extends TestCase
         'User' => 'user',
         'View' => 'view',
     ];
+
+    protected function setUp()
+    {
+        parent::setUp();
+        $this->createConsoleApplication($this->config);
+        Facade::setFacadeApplication(\Yii::$app);
+    }
 
     /**
      * @expectedException \yii\base\InvalidConfigException
@@ -171,9 +178,9 @@ class FacadeTest extends TestCase
 
     public function testPrivateConstruction()
     {
-        $this->assertFalse((new \ReflectionMethod('sergeymakinen\tests\mocks\ComponentFacade', '__construct'))->isPublic());
-        $this->assertFalse((new \ReflectionMethod('sergeymakinen\tests\mocks\ComponentFacade', '__clone'))->isPublic());
-        $this->assertFalse((new \ReflectionMethod('sergeymakinen\tests\mocks\ComponentFacade', '__wakeup'))->isPublic());
+        $this->assertFalse((new \ReflectionMethod('sergeymakinen\tests\facades\mocks\ComponentFacade', '__construct'))->isPublic());
+        $this->assertFalse((new \ReflectionMethod('sergeymakinen\tests\facades\mocks\ComponentFacade', '__clone'))->isPublic());
+        $this->assertFalse((new \ReflectionMethod('sergeymakinen\tests\facades\mocks\ComponentFacade', '__wakeup'))->isPublic());
     }
 
     public function testMappings()
@@ -183,12 +190,5 @@ class FacadeTest extends TestCase
             $class = 'sergeymakinen\facades\\' . $className;
             $this->assertEquals($id, $class::getFacadeComponentId());
         }
-    }
-
-    protected function setUp()
-    {
-        parent::setUp();
-        $this->createConsoleApplication($this->config);
-        Facade::setFacadeApplication(\Yii::$app);
     }
 }

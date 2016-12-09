@@ -1,6 +1,6 @@
 <?php
 
-namespace sergeymakinen\tests;
+namespace sergeymakinen\tests\facades;
 
 use sergeymakinen\facades\Facade;
 use sergeymakinen\facades\Response;
@@ -17,6 +17,13 @@ class ResponseTest extends TestCase
         'foo' => 'bar',
         'bar' => 'foo',
     ];
+
+    protected function setUp()
+    {
+        parent::setUp();
+        $this->createWebApplication();
+        Facade::setFacadeApplication(\Yii::$app);
+    }
 
     public function testBare()
     {
@@ -56,13 +63,6 @@ class ResponseTest extends TestCase
     {
         $response = Response::xml($this->data, $this->headers);
         $this->checkResponse($response, \yii\web\Response::FORMAT_XML, $this->data);
-    }
-
-    protected function setUp()
-    {
-        parent::setUp();
-        $this->createWebApplication();
-        Facade::setFacadeApplication(\Yii::$app);
     }
 
     protected function checkResponse(\yii\web\Response $response, $format, $data)
