@@ -8,25 +8,25 @@ Laravel like facades support for Yii 2 application components. Just what you wan
 
 ## Table of contents
 
-* [Installation](#installation)
-* [Usage](#usage)
+- [Installation](#installation)
+- [Usage](#usage)
   * [Generate random string](#generate-random-string)
   * [Fetch all users (just an example!)](#fetch-all-users-just-an-example)
   * [Format currency](#format-currency)
-* [Access properties](#access-properties)
-* [Available facades](#available-facades)
-* [Helpers](#helpers)
+- [Access properties](#access-properties)
+- [Available facades](#available-facades)
+- [Helpers](#helpers)
   * [Cache](#cache)
-    * [cache](#cache-1)
-    * [get](#get)
+    + [cache](#cache)
+    + [get](#get)
   * [Response](#response)
-    * [bare](#bare)
-    * [html](#html)
-    * [json](#json)
-    * [jsonp](#jsonp)
-    * [raw](#raw)
-    * [xml](#xml)
-* [Extending](#extending)
+    + [bare](#bare)
+    + [html](#html)
+    + [json](#json)
+    + [jsonp](#jsonp)
+    + [raw](#raw)
+    + [xml](#xml)
+- [Extending](#extending)
 
 ## Installation
 
@@ -34,13 +34,13 @@ The preferred way to install this extension is through [composer](https://getcom
 
 Either run
 
-```
-php composer.phar require sergeymakinen/yii2-facades "^1.0"
+```bash
+composer require "sergeymakinen/yii2-facades:^1.0"
 ```
 
 or add
 
-```
+```json
 "sergeymakinen/yii2-facades": "^1.0"
 ```
 
@@ -228,7 +228,7 @@ Some facades also contain useful helpers to make a development more quick and el
 
 #### cache
 
-Alias: `getOrSet`
+**Alias**: `getOrSet`
 
 ```php
 public static function cache($key, $default, $duration = 0, $dependency = null)
