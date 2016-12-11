@@ -22,6 +22,7 @@ before_install:
           phpenv config-rm xdebug.ini
       fi
 install:
+    - composer self-update
     - composer config -g repositories.asset-packagist composer https://asset-packagist.org
     - travis_retry composer update --no-interaction --prefer-stable --prefer-dist
     - composer show
