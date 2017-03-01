@@ -1,11 +1,11 @@
 <?php
 /**
- * Facades for Yii 2.
+ * Facades for Yii 2
  *
- * Generated on Yii 2.0.10
+ * Generated on Yii 2.0.11.2
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
- * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
  * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
  */
 
@@ -91,7 +91,7 @@ namespace sergeymakinen\facades;
  * @method static int getPort() Returns the port to use for connecting to the redis server.
  * @see \yii\redis\Connection::port
  *
- * @method static array getRedisCommands() Returns List of available redis commands http://redis.io/commands.
+ * @method static array getRedisCommands() Returns List of available redis commands http://redis.
  * @see \yii\redis\Connection::redisCommands
  *
  * @method static int getSocketClientFlags() Returns Bitmask field which may be set to any combination of connection flags passed to [stream_socket_client()](http://php.net/manual/en/function.stream-socket-client.php).
@@ -118,7 +118,7 @@ namespace sergeymakinen\facades;
  * @method static void setPort(int $value) Sets the port to use for connecting to the redis server.
  * @see \yii\redis\Connection::port
  *
- * @method static void setRedisCommands(array $value) Sets List of available redis commands http://redis.io/commands.
+ * @method static void setRedisCommands(array $value) Sets List of available redis commands http://redis.
  * @see \yii\redis\Connection::redisCommands
  *
  * @method static void setSocketClientFlags(int $value) Sets Bitmask field which may be set to any combination of connection flags passed to [stream_socket_client()](http://php.net/manual/en/function.stream-socket-client.php).
@@ -130,7 +130,7 @@ namespace sergeymakinen\facades;
 class Redis extends Facade
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public static function getFacadeComponentId()
     {

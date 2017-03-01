@@ -1,9 +1,9 @@
 <?php
 /**
- * Facades for Yii 2.
+ * Facades for Yii 2
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
- * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
  * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
  */
 
@@ -39,6 +39,60 @@ abstract class Facade
     private static $_components = [];
 
     /**
+     * Prevents the class to be instantiated.
+     */
+    private function __construct()
+    {
+    }
+
+    /**
+     * Prevents the class to be serialized.
+     */
+    private function __wakeup()
+    {
+    }
+
+    /**
+     * Prevents the class to be cloned.
+     */
+    private function __clone()
+    {
+    }
+
+    /**
+     * Redirects static calls to component instance calls.
+     *
+     * @inheritDoc
+     */
+    public static function __callStatic($name, $arguments)
+    {
+        $id = static::getFacadeComponentId();
+        if (!isset(self::$_accessors[$id])) {
+            self::$_accessors[$id] = [];
+            foreach ((new \ReflectionClass(static::getFacadeComponent()))->getProperties(
+                \ReflectionProperty::IS_PUBLIC & ~\ReflectionProperty::IS_STATIC
+            ) as $property) {
+                $accessor = ucfirst($property->getName());
+                self::$_accessors[$id]['get' . $accessor] = $property->getName();
+                self::$_accessors[$id]['set' . $accessor] = $property->getName();
+            }
+        }
+        if (isset(self::$_accessors[$id][$name])) {
+            if ($name[0] === 'g') {
+                return static::getFacadeComponent()->{self::$_accessors[$id][$name]};
+            } else {
+                static::getFacadeComponent()->{self::$_accessors[$id][$name]} = reset($arguments);
+                return null;
+            }
+        } else {
+            return call_user_func_array([
+                static::getFacadeComponent(),
+                $name,
+            ], $arguments);
+        }
+    }
+
+    /**
      * Clears a resolved facade component.
      *
      * @param string $id
@@ -61,6 +115,7 @@ abstract class Facade
      * Returns a component ID being facaded.
      *
      * @return string
+     * @throws \yii\base\InvalidConfigException
      */
     public static function getFacadeComponentId()
     {
@@ -103,62 +158,5 @@ abstract class Facade
     {
         self::$_app = $value;
         self::clearResolvedFacadeComponents();
-    }
-
-    /**
-     * Redirects static calls to component instance calls.
-     *
-     * @inheritDoc
-     */
-    public static function __callStatic($name, $arguments)
-    {
-        $id = static::getFacadeComponentId();
-        if (!isset(self::$_accessors[$id])) {
-            self::$_accessors[$id] = [];
-            foreach ((new \ReflectionClass(static::getFacadeComponent()))->getProperties(
-                \ReflectionProperty::IS_PUBLIC & ~\ReflectionProperty::IS_STATIC
-            ) as $property) {
-                $accessor = ucfirst($property->getName());
-                self::$_accessors[$id]['get' . $accessor] = $property->getName();
-                self::$_accessors[$id]['set' . $accessor] = $property->getName();
-            }
-        }
-        if (isset(self::$_accessors[$id][$name])) {
-            if ($name[0] === 'g') {
-                return static::getFacadeComponent()->{self::$_accessors[$id][$name]};
-            } else {
-                static::getFacadeComponent()->{self::$_accessors[$id][$name]} = reset($arguments);
-                return null;
-            }
-        } else {
-            return call_user_func_array([
-                static::getFacadeComponent(),
-                $name,
-            ], $arguments);
-        }
-    }
-
-    /**
-     * @inheritDoc
-     * @codeCoverageIgnore
-     */
-    private function __construct()
-    {
-    }
-
-    /**
-     * @inheritDoc
-     * @codeCoverageIgnore
-     */
-    private function __wakeup()
-    {
-    }
-
-    /**
-     * @inheritDoc
-     * @codeCoverageIgnore
-     */
-    private function __clone()
-    {
     }
 }

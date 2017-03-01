@@ -1,11 +1,11 @@
 <?php
 /**
- * Facades for Yii 2.
+ * Facades for Yii 2
  *
- * Generated on Yii 2.0.10
+ * Generated on Yii 2.0.11.2
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
- * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
  * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
  */
 
@@ -56,25 +56,28 @@ namespace sergeymakinen\facades;
  * @method static \yii\base\Behavior[] getBehaviors() Returns all behaviors attached to this component.
  * @see \yii\base\Component::getBehaviors
  *
+ * @method static mixed getOrSet(mixed $key, \Closure $closure, int $duration = null, \yii\caching\Dependency $dependency = null) Method combines both [[set()]] and [[get()]] methods to retrieve value identified by a $key, or to store the result of $closure execution if there is no cache available for the $key.
+ * @see \yii\caching\Cache::getOrSet
+ *
  * @method static bool hasEventHandlers(string $name) Returns a value indicating whether there is any handler attached to the named event.
  * @see \yii\base\Component::hasEventHandlers
  *
- * @method static bool madd(array $items, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores multiple items in cache.
+ * @method static array madd(array $items, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores multiple items in cache.
  * @see \yii\caching\Cache::madd
  *
  * @method static array mget(string[] $keys) Retrieves multiple values from cache with the specified keys.
  * @see \yii\caching\Cache::mget
  *
- * @method static bool mset(array $items, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores multiple items in cache.
+ * @method static array mset(array $items, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores multiple items in cache.
  * @see \yii\caching\Cache::mset
  *
- * @method static bool multiAdd(array $items, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores multiple items in cache.
+ * @method static array multiAdd(array $items, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores multiple items in cache.
  * @see \yii\caching\Cache::multiAdd
  *
  * @method static array multiGet(string[] $keys) Retrieves multiple values from cache with the specified keys.
  * @see \yii\caching\Cache::multiGet
  *
- * @method static bool multiSet(array $items, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores multiple items in cache.
+ * @method static array multiSet(array $items, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores multiple items in cache.
  * @see \yii\caching\Cache::multiSet
  *
  * @method static bool off(string $name, callable $handler = null) Detaches an existing event handler from this component.
@@ -83,7 +86,7 @@ namespace sergeymakinen\facades;
  * @method static void on(string $name, callable $handler, mixed $data = null, bool $append = true) Attaches an event handler to an event.
  * @see \yii\base\Component::on
  *
- * @method static bool set(mixed $key, mixed $value, int $duration = 0, \yii\caching\Dependency $dependency = null) Stores a value identified by a key into cache.
+ * @method static bool set(mixed $key, mixed $value, int $duration = null, \yii\caching\Dependency $dependency = null) Stores a value identified by a key into cache.
  * @see \yii\caching\Cache::set
  *
  * @method static void trigger(string $name, \yii\base\Event $event = null) Triggers an event.
@@ -91,11 +94,17 @@ namespace sergeymakinen\facades;
  *
  * Property accessors
  *
+ * @method static int getDefaultDuration() Returns default duration in seconds before a cache entry will expire.
+ * @see \yii\caching\Cache::defaultDuration
+ *
  * @method static string getKeyPrefix() Returns a string prefixed to every cache key so that it is unique globally in the whole cache storage.
  * @see \yii\caching\Cache::keyPrefix
  *
  * @method static null|array|bool getSerializer() Returns the functions used to serialize and unserialize cached data.
  * @see \yii\caching\Cache::serializer
+ *
+ * @method static void setDefaultDuration(int $value) Sets default duration in seconds before a cache entry will expire.
+ * @see \yii\caching\Cache::defaultDuration
  *
  * @method static void setKeyPrefix(string $value) Sets a string prefixed to every cache key so that it is unique globally in the whole cache storage.
  * @see \yii\caching\Cache::keyPrefix
@@ -106,7 +115,7 @@ namespace sergeymakinen\facades;
 class Cache extends Facade
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public static function getFacadeComponentId()
     {
@@ -127,7 +136,7 @@ class Cache extends Facade
      * the corresponding value in the cache will be invalidated when it is fetched via [[get()]].
      * This parameter is ignored if [[serializer]] is false.
      *
-     * @return mixed the value stored into cache.
+     * @return bool whether the value is successfully stored into cache.
      */
     public static function cache($key, $default, $duration = 0, $dependency = null)
     {
@@ -169,21 +178,5 @@ class Cache extends Facade
             }
         }
         return $value;
-    }
-
-    /**
-     * Retrieves a value from cache (or stores it if it's not cached) with a specified key.
-     *
-     * @see cache
-     * @param mixed $key a key identifying the cached value.
-     * @param callable|mixed $default the value to be cached and retrieved if some value is not already in the cache.
-     * @param int $duration the number of seconds in which the cached value will expire.
-     * @param \yii\caching\Dependency $dependency dependency of the cached item.
-     *
-     * @return bool whether the value is successfully stored into cache.
-     */
-    public static function getOrSet($key, $default, $duration = 0, $dependency = null)
-    {
-        return static::cache($key, $default, $duration, $dependency);
     }
 }

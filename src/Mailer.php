@@ -1,11 +1,11 @@
 <?php
 /**
- * Facades for Yii 2.
+ * Facades for Yii 2
  *
- * Generated on Yii 2.0.10
+ * Generated on Yii 2.0.11.2
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
- * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
  * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
  */
 
@@ -142,7 +142,7 @@ namespace sergeymakinen\facades;
 class Mailer extends Facade
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public static function getFacadeComponentId()
     {

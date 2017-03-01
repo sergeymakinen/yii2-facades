@@ -1,11 +1,11 @@
 <?php
 /**
- * Facades for Yii 2.
+ * Facades for Yii 2
  *
- * Generated on Yii 2.0.10
+ * Generated on Yii 2.0.11.2
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
- * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
  * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
  */
 
@@ -61,6 +61,9 @@ namespace sergeymakinen\facades;
  *
  * @method static string getLastInsertID(string $sequenceName = '') Returns the ID of the last inserted row or sequence value.
  * @see \yii\db\Connection::getLastInsertID
+ *
+ * @method static \yii\db\Connection getMaster() Returns the currently active master connection.
+ * @see \yii\db\Connection::getMaster
  *
  * @method static \PDO getMasterPdo() Returns the PDO instance for the currently active master connection.
  * @see \yii\db\Connection::getMasterPdo
@@ -193,6 +196,9 @@ namespace sergeymakinen\facades;
  * @method static \yii\caching\Cache|string getServerStatusCache() Returns the cache object or the ID of the cache application component that is used to store the health status of the DB servers specified in [[masters]] and [[slaves]].
  * @see \yii\db\Connection::serverStatusCache
  *
+ * @method static bool getShuffleMasters() Returns whether to shuffle [[masters]] before getting one.
+ * @see \yii\db\Connection::shuffleMasters
+ *
  * @method static array getSlaveConfig() Returns the configuration that should be merged with every slave configuration listed in [[slaves]].
  * @see \yii\db\Connection::slaveConfig
  *
@@ -271,6 +277,9 @@ namespace sergeymakinen\facades;
  * @method static void setServerStatusCache(\yii\caching\Cache|string $value) Sets the cache object or the ID of the cache application component that is used to store the health status of the DB servers specified in [[masters]] and [[slaves]].
  * @see \yii\db\Connection::serverStatusCache
  *
+ * @method static void setShuffleMasters(bool $value) Sets whether to shuffle [[masters]] before getting one.
+ * @see \yii\db\Connection::shuffleMasters
+ *
  * @method static void setSlaveConfig(array $value) Sets the configuration that should be merged with every slave configuration listed in [[slaves]].
  * @see \yii\db\Connection::slaveConfig
  *
@@ -286,7 +295,7 @@ namespace sergeymakinen\facades;
 class Db extends Facade
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public static function getFacadeComponentId()
     {

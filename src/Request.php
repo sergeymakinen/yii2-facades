@@ -1,11 +1,11 @@
 <?php
 /**
- * Facades for Yii 2.
+ * Facades for Yii 2
  *
- * Generated on Yii 2.0.10
+ * Generated on Yii 2.0.11.2
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
- * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
  * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
  */
 
@@ -68,7 +68,7 @@ namespace sergeymakinen\facades;
  * @method static array getBodyParams() Returns the request parameters given in the request body.
  * @see \yii\web\Request::getBodyParams
  *
- * @method static string getContentType() Returns request content-type.
+ * @method static string getContentType() Returns request content-type The Content-Type header field indicates the MIME type of the data contained in [[getRawBody()]] or, in the case of the HEAD method, the media type that would have been sent had the request been a GET.
  * @see \yii\web\Request::getContentType
  *
  * @method static \yii\web\CookieCollection getCookies() Returns the cookie collection.
@@ -307,7 +307,7 @@ namespace sergeymakinen\facades;
 class Request extends Facade
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public static function getFacadeComponentId()
     {

@@ -1,11 +1,11 @@
 <?php
 /**
- * Facades for Yii 2.
+ * Facades for Yii 2
  *
- * Generated on Yii 2.0.10
+ * Generated on Yii 2.0.11.2
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
- * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
  * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
  */
 
@@ -29,7 +29,7 @@ namespace sergeymakinen\facades;
  * @method static array behaviors() Returns a list of behaviors that this component should behave as.
  * @see \yii\base\Component::behaviors
  *
- * @method static string createAbsoluteUrl(string|array $params, string $scheme = null) Creates an absolute URL using the given route and query parameters.
+ * @method static string createAbsoluteUrl(string|array $params, string|null $scheme = null) Creates an absolute URL using the given route and query parameters.
  * @see \yii\web\UrlManager::createAbsoluteUrl
  *
  * @method static string createUrl(string|array $params) Creates a URL using the given route and query parameters.
@@ -142,7 +142,7 @@ namespace sergeymakinen\facades;
 class Router extends Facade
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public static function getFacadeComponentId()
     {

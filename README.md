@@ -228,8 +228,6 @@ Some facades also contain useful helpers to make a development more quick and el
 
 #### cache
 
-**Alias**: `getOrSet`
-
 ```php
 public static function cache($key, $default, $duration = 0, $dependency = null)
 ```

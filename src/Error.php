@@ -1,11 +1,11 @@
 <?php
 /**
- * Facades for Yii 2.
+ * Facades for Yii 2
  *
- * Generated on Yii 2.0.10
+ * Generated on Yii 2.0.11.2
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
- * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
  * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
  */
 
@@ -41,13 +41,13 @@ namespace sergeymakinen\facades;
  * @method static string convertExceptionToString(\Exception $exception) Converts an exception into a simple string.
  * @see \yii\base\ErrorHandler::convertExceptionToString
  *
- * @method static string createFrameworkVersionLink() Creates string containing HTML link which refers to the page with the current version.
+ * @method static string createFrameworkVersionLink() Creates string containing HTML link which refers to the page with the current version of the framework and version number text.
  * @see \yii\web\ErrorHandler::createFrameworkVersionLink
  *
  * @method static string createHttpStatusLink(int $statusCode, string $statusDescription) Creates HTML containing link to the page with the information on given HTTP status code.
  * @see \yii\web\ErrorHandler::createHttpStatusLink
  *
- * @method static string createServerInformationLink() Creates string containing HTML link which refers to the home page of determined web-server software.
+ * @method static string createServerInformationLink() Creates string containing HTML link which refers to the home page of determined web-server software and its full name.
  * @see \yii\web\ErrorHandler::createServerInformationLink
  *
  * @method static null|\yii\base\Behavior detachBehavior(string $name) Detaches a behavior from the component.
@@ -190,7 +190,7 @@ namespace sergeymakinen\facades;
 class Error extends Facade
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public static function getFacadeComponentId()
     {

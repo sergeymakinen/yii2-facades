@@ -1,11 +1,11 @@
 <?php
 /**
- * Facades for Yii 2.
+ * Facades for Yii 2
  *
- * Generated on Yii 2.0.10
+ * Generated on Yii 2.0.11.2
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
- * @copyright Copyright (c) 2016 Sergey Makinen (https://makinen.ru)
+ * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
  * @license   https://github.com/sergeymakinen/yii2-facades/blob/master/LICENSE The MIT License
  */
 
@@ -44,7 +44,7 @@ namespace sergeymakinen\facades;
  * @method static \yii\rbac\Assignment[] getAssignments(string|int $userId) Returns all role assignment information for the specified user.
  * @see \yii\rbac\ManagerInterface::getAssignments
  *
- * @method static \yii\rbac\Role[] getChildRoles(string $roleName) Returns the roles that are adding to the role via [[addChild()]] by recursive.
+ * @method static \yii\rbac\Role[] getChildRoles(string $roleName) Returns child roles of the role specified.
  * @see \yii\rbac\ManagerInterface::getChildRoles
  *
  * @method static \yii\rbac\Item[] getChildren(string $name) Returns the child permissions and/or roles.
@@ -119,7 +119,7 @@ namespace sergeymakinen\facades;
 class Auth extends Facade
 {
     /**
-     * @inheritdoc
+     * @inheritDoc
      */
     public static function getFacadeComponentId()
     {
