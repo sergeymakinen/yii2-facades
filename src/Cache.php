@@ -2,7 +2,7 @@
 /**
  * Facades for Yii 2
  *
- * Generated on Yii 2.0.11.2
+ * Generated on Yii 2.0.12
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
  * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
@@ -56,7 +56,7 @@ namespace sergeymakinen\facades;
  * @method static \yii\base\Behavior[] getBehaviors() Returns all behaviors attached to this component.
  * @see \yii\base\Component::getBehaviors
  *
- * @method static mixed getOrSet(mixed $key, \Closure $closure, int $duration = null, \yii\caching\Dependency $dependency = null) Method combines both [[set()]] and [[get()]] methods to retrieve value identified by a $key, or to store the result of $closure execution if there is no cache available for the $key.
+ * @method static mixed getOrSet(mixed $key, callable|\Closure $callable, int $duration = null, \yii\caching\Dependency $dependency = null) Method combines both [[set()]] and [[get()]] methods to retrieve value identified by a $key, or to store the result of $callable execution if there is no cache available for the $key.
  * @see \yii\caching\Cache::getOrSet
  *
  * @method static bool hasEventHandlers(string $name) Returns a value indicating whether there is any handler attached to the named event.

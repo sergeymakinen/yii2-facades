@@ -2,7 +2,7 @@
 /**
  * Facades for Yii 2
  *
- * Generated on Yii 2.0.11.2
+ * Generated on Yii 2.0.12
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
  * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
@@ -157,13 +157,13 @@ namespace sergeymakinen\facades;
  * @method static string getNullDisplay() Returns the text to be displayed when formatting a `null` value.
  * @see \yii\i18n\Formatter::nullDisplay
  *
- * @method static array getNumberFormatterOptions() Returns a list of name value pairs that are passed to the intl [Numberformatter::setAttribute()](http://php.net/manual/en/numberformatter.setattribute.php) method of all the number formatter objects created by [[createNumberFormatter()]].
+ * @method static array getNumberFormatterOptions() Returns a list of name value pairs that are passed to the intl [NumberFormatter::setAttribute()](http://php.net/manual/en/numberformatter.setattribute.php) method of all the number formatter objects created by [[createNumberFormatter()]].
  * @see \yii\i18n\Formatter::numberFormatterOptions
  *
- * @method static array getNumberFormatterSymbols() Returns a list of name value pairs that are passed to the intl [Numberformatter::setSymbol()](http://php.net/manual/en/numberformatter.setsymbol.php) method of all the number formatter objects created by [[createNumberFormatter()]].
+ * @method static array getNumberFormatterSymbols() Returns a list of name value pairs that are passed to the intl [NumberFormatter::setSymbol()](http://php.net/manual/en/numberformatter.setsymbol.php) method of all the number formatter objects created by [[createNumberFormatter()]].
  * @see \yii\i18n\Formatter::numberFormatterSymbols
  *
- * @method static array getNumberFormatterTextOptions() Returns a list of name value pairs that are passed to the intl [Numberformatter::setTextAttribute()](http://php.net/manual/en/numberformatter.settextattribute.php) method of all the number formatter objects created by [[createNumberFormatter()]].
+ * @method static array getNumberFormatterTextOptions() Returns a list of name value pairs that are passed to the intl [NumberFormatter::setTextAttribute()](http://php.net/manual/en/numberformatter.settextattribute.php) method of all the number formatter objects created by [[createNumberFormatter()]].
  * @see \yii\i18n\Formatter::numberFormatterTextOptions
  *
  * @method static int getSizeFormatBase() Returns the base at which a kilobyte is calculated (1000 or 1024 bytes per kilobyte), used by [[asSize]] and [[asShortSize]].
@@ -205,13 +205,13 @@ namespace sergeymakinen\facades;
  * @method static void setNullDisplay(string $value) Sets the text to be displayed when formatting a `null` value.
  * @see \yii\i18n\Formatter::nullDisplay
  *
- * @method static void setNumberFormatterOptions(array $value) Sets a list of name value pairs that are passed to the intl [Numberformatter::setAttribute()](http://php.net/manual/en/numberformatter.setattribute.php) method of all the number formatter objects created by [[createNumberFormatter()]].
+ * @method static void setNumberFormatterOptions(array $value) Sets a list of name value pairs that are passed to the intl [NumberFormatter::setAttribute()](http://php.net/manual/en/numberformatter.setattribute.php) method of all the number formatter objects created by [[createNumberFormatter()]].
  * @see \yii\i18n\Formatter::numberFormatterOptions
  *
- * @method static void setNumberFormatterSymbols(array $value) Sets a list of name value pairs that are passed to the intl [Numberformatter::setSymbol()](http://php.net/manual/en/numberformatter.setsymbol.php) method of all the number formatter objects created by [[createNumberFormatter()]].
+ * @method static void setNumberFormatterSymbols(array $value) Sets a list of name value pairs that are passed to the intl [NumberFormatter::setSymbol()](http://php.net/manual/en/numberformatter.setsymbol.php) method of all the number formatter objects created by [[createNumberFormatter()]].
  * @see \yii\i18n\Formatter::numberFormatterSymbols
  *
- * @method static void setNumberFormatterTextOptions(array $value) Sets a list of name value pairs that are passed to the intl [Numberformatter::setTextAttribute()](http://php.net/manual/en/numberformatter.settextattribute.php) method of all the number formatter objects created by [[createNumberFormatter()]].
+ * @method static void setNumberFormatterTextOptions(array $value) Sets a list of name value pairs that are passed to the intl [NumberFormatter::setTextAttribute()](http://php.net/manual/en/numberformatter.settextattribute.php) method of all the number formatter objects created by [[createNumberFormatter()]].
  * @see \yii\i18n\Formatter::numberFormatterTextOptions
  *
  * @method static void setSizeFormatBase(int $value) Sets the base at which a kilobyte is calculated (1000 or 1024 bytes per kilobyte), used by [[asSize]] and [[asShortSize]].

@@ -2,7 +2,7 @@
 /**
  * Facades for Yii 2
  *
- * Generated on Yii 2.0.11.2
+ * Generated on Yii 2.0.12
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
  * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
@@ -145,6 +145,12 @@ namespace sergeymakinen\facades;
  * @method static bool getEmulatePrepare() Returns whether to turn on prepare emulation.
  * @see \yii\db\Connection::emulatePrepare
  *
+ * @method static bool getEnableLogging() Returns whether to enable logging of database queries.
+ * @see \yii\db\Connection::enableLogging
+ *
+ * @method static bool getEnableProfiling() Returns whether to enable profiling of database queries.
+ * @see \yii\db\Connection::enableProfiling
+ *
  * @method static bool getEnableQueryCache() Returns whether to enable query caching.
  * @see \yii\db\Connection::enableQueryCache
  *
@@ -225,6 +231,12 @@ namespace sergeymakinen\facades;
  *
  * @method static void setEmulatePrepare(bool $value) Sets whether to turn on prepare emulation.
  * @see \yii\db\Connection::emulatePrepare
+ *
+ * @method static void setEnableLogging(bool $value) Sets whether to enable logging of database queries.
+ * @see \yii\db\Connection::enableLogging
+ *
+ * @method static void setEnableProfiling(bool $value) Sets whether to enable profiling of database queries.
+ * @see \yii\db\Connection::enableProfiling
  *
  * @method static void setEnableQueryCache(bool $value) Sets whether to enable query caching.
  * @see \yii\db\Connection::enableQueryCache

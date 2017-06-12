@@ -2,7 +2,7 @@
 /**
  * Facades for Yii 2
  *
- * Generated on Yii 2.0.11.2
+ * Generated on Yii 2.0.12
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
  * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
@@ -38,7 +38,7 @@ namespace sergeymakinen\facades;
  * @method static void convertExceptionToError(\Exception $exception) Converts an exception into a PHP error.
  * @see \yii\base\ErrorHandler::convertExceptionToError
  *
- * @method static string convertExceptionToString(\Exception $exception) Converts an exception into a simple string.
+ * @method static string convertExceptionToString(\Exception|\Error $exception) Converts an exception into a simple string.
  * @see \yii\base\ErrorHandler::convertExceptionToString
  *
  * @method static string createFrameworkVersionLink() Creates string containing HTML link which refers to the page with the current version of the framework and version number text.
@@ -101,6 +101,9 @@ namespace sergeymakinen\facades;
  * @method static void register() Register this error handler.
  * @see \yii\base\ErrorHandler::register
  *
+ * @method static string renderCallStack(\Exception|\ParseError $exception) Renders call stack.
+ * @see \yii\web\ErrorHandler::renderCallStack
+ *
  * @method static string renderCallStackItem(string|null $file, int|null $line, string|null $class, string|null $method, array $args, int $index) Renders a single call stack element.
  * @see \yii\web\ErrorHandler::renderCallStackItem
  *
@@ -136,7 +139,7 @@ namespace sergeymakinen\facades;
  * @method static string getErrorView() Returns the path of the view file for rendering exceptions without call stack information.
  * @see \yii\web\ErrorHandler::errorView
  *
- * @method static \Exception getException() Returns the exception that is being handled currently.
+ * @method static \Exception|null getException() Returns the exception that is being handled currently.
  * @see \yii\base\ErrorHandler::exception
  *
  * @method static string getExceptionView() Returns the path of the view file for rendering exceptions.
@@ -169,7 +172,7 @@ namespace sergeymakinen\facades;
  * @method static void setErrorView(string $value) Sets the path of the view file for rendering exceptions without call stack information.
  * @see \yii\web\ErrorHandler::errorView
  *
- * @method static void setException(\Exception $value) Sets the exception that is being handled currently.
+ * @method static void setException(\Exception|null $value) Sets the exception that is being handled currently.
  * @see \yii\base\ErrorHandler::exception
  *
  * @method static void setExceptionView(string $value) Sets the path of the view file for rendering exceptions.

@@ -2,7 +2,7 @@
 /**
  * Facades for Yii 2
  *
- * Generated on Yii 2.0.11.2
+ * Generated on Yii 2.0.12
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
  * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
@@ -131,7 +131,7 @@ namespace sergeymakinen\facades;
  * @method static string readSession(string $id) Session read handler.
  * @see \yii\web\Session::readSession
  *
- * @method static void regenerateID(bool $deleteOldSession = false) Updates the current session ID with a newly generated one .
+ * @method static void regenerateID(bool $deleteOldSession = false) Updates the current session ID with a newly generated one.
  * @see \yii\web\Session::regenerateID
  *
  * @method static mixed remove(string $key) Removes a session variable.

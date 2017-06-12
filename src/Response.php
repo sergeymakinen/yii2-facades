@@ -2,7 +2,7 @@
 /**
  * Facades for Yii 2
  *
- * Generated on Yii 2.0.11.2
+ * Generated on Yii 2.0.12
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
  * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
@@ -116,8 +116,11 @@ namespace sergeymakinen\facades;
  * @method static \yii\web\Response setDownloadHeaders(string $attachmentName, string $mimeType = null, bool $inline = false, int $contentLength = null) Sets a default set of HTTP headers for file downloading purpose.
  * @see \yii\web\Response::setDownloadHeaders
  *
- * @method static void setStatusCode(int $value, string $text = null) Sets the response status code.
+ * @method static \yii\web\Response setStatusCode(int $value, string $text = null) Sets the response status code.
  * @see \yii\web\Response::setStatusCode
+ *
+ * @method static \yii\web\Response setStatusCodeByException(\Exception|\Error $e) Sets the response status code based on the exception.
+ * @see \yii\web\Response::setStatusCodeByException
  *
  * @method static void trigger(string $name, \yii\base\Event $event = null) Triggers an event.
  * @see \yii\base\Component::trigger

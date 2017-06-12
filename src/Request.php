@@ -2,7 +2,7 @@
 /**
  * Facades for Yii 2
  *
- * Generated on Yii 2.0.11.2
+ * Generated on Yii 2.0.12
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
  * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
@@ -251,7 +251,7 @@ namespace sergeymakinen\facades;
  * @method static void trigger(string $name, \yii\base\Event $event = null) Triggers an event.
  * @see \yii\base\Component::trigger
  *
- * @method static bool validateCsrfToken(string $token = null) Performs the CSRF validation.
+ * @method static bool validateCsrfToken(string $clientSuppliedToken = null) Performs the CSRF validation.
  * @see \yii\web\Request::validateCsrfToken
  *
  * Property accessors

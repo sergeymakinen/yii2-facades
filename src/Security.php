@@ -2,7 +2,7 @@
 /**
  * Facades for Yii 2
  *
- * Generated on Yii 2.0.11.2
+ * Generated on Yii 2.0.12
  *
  * @see       https://github.com/sergeymakinen/yii2-facades
  * @copyright Copyright (c) 2016-2017 Sergey Makinen (https://makinen.ru)
@@ -74,6 +74,9 @@ namespace sergeymakinen\facades;
  * @method static string hkdf(string $algo, string $inputKey, string $salt = null, string $info = null, int $length = 0) Derives a key from the given input key using the standard HKDF algorithm.
  * @see \yii\base\Security::hkdf
  *
+ * @method static string maskToken(string $token) Masks a token to make it uncompressible.
+ * @see \yii\base\Security::maskToken
+ *
  * @method static bool off(string $name, callable $handler = null) Detaches an existing event handler from this component.
  * @see \yii\base\Component::off
  *
@@ -86,7 +89,10 @@ namespace sergeymakinen\facades;
  * @method static void trigger(string $name, \yii\base\Event $event = null) Triggers an event.
  * @see \yii\base\Component::trigger
  *
- * @method static string validateData(string $data, string $key, bool $rawHash = false) Validates if the given data is tampered.
+ * @method static string unmaskToken(string $maskedToken) Unmasks a token previously masked by `maskToken`.
+ * @see \yii\base\Security::unmaskToken
+ *
+ * @method static string|bool validateData(string $data, string $key, bool $rawHash = false) Validates if the given data is tampered.
  * @see \yii\base\Security::validateData
  *
  * @method static bool validatePassword(string $password, string $hash) Verifies a password against a hash.
