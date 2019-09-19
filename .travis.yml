@@ -1,3 +1,4 @@
+dist: trusty
 sudo: false
 git:
   depth: 1
@@ -56,11 +57,3 @@ after_script:
       travis_retry wget https://scrutinizer-ci.com/ocular.phar
       php ocular.phar code-coverage:upload --format=php-clover coverage.xml
   fi
-notifications:
-  slack:
-    on_start: always
-    on_success: always
-    on_failure: always
-    on_pull_requests: false
-    rooms:
-      secure: U9MV4c2r1zkItFWq52Je9eU7IjEEh5NW8gMEc5uLM2AAJSQAfTOq4Ju+CXY4WSEsorUl6CabySGErWONnLx99jNWC5Mi4hcUbuLIxYT2dFnf/K3sYfVB6vFa9rrY/PGQtivAbu0VF+R5hNl9MX0+YB63QgWFIbue0II5Un7DPiKk730YTmDGHlor3FcH3D2eE4QXCu3mzQXFGyyYDmvFtVRd1OeM11G4qJhtsIkjSSsz0SoZxUOWHVgWCJQDHGDmq+v8XGXHq9b/BQjLab0x1lMFPyhMq3BZkZusHobW55eiqGCNzTWZDsYQssOVngy3FRt2hzQACn3UvAAfBYX8j8A8qz3wYIqFo8f09KAja3vqhdocrRAtS1dqvtbMWHUEEMExHEroZiYsAH8KsPTKqhXOG5dhQ6rpb+3oROvHxK/Df9BbF+nmTqgovhZKPE3RPNkLHHwIdcK4K1B8ZWr+KrC8ib4gYVthWqfLjDG9sYTUodbSZ6qDOiv+aEzRKlowNmPtoRNphumefhIHTcc55HANiFJJVU4nI1Lv0mSLmTTuq55+9A4ft4bf4AKCwIgbWrdhzghlDB3qjZkcO71KMXfxeD9fCwitL4j7uP+LvNtlUM2gML6d+UEhelR269CKXyC0QuoeEXOqofDnKPxS/bKHJ1bisAe1Ggw5HaSih+A=
